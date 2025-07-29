@@ -24,8 +24,8 @@ This extension helps you automate Pure Storage FlashArray management tasks by pr
 1. Open a YAML or Ansible playbook file in VS Code.  
 2. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).  
 3. Type and select:
-   - `Search PuraFA Ansible Snippets - v1.36.0`  
-   - or `Search PuraFA Ansible Snippets - v1.35.1`
+   - `Search PureFA Ansible Snippets - v1.36.0`  
+   - or `Search PureFA Ansible Snippets - v1.35.1`
 4. Search for a snippet by keyword or description.  
 5. Select a snippet to insert it at your cursor location.  
 
