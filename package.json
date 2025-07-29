@@ -1,0 +1,62 @@
+{
+  "name": "ansible-purefa-snippets",
+  "displayName": "Ansible PureFA Snippets",
+  "description": "Search and insert Pure Storage Flash Array Ansible snippets inside VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "logo.png",
+  "keywords": [
+    "purefa",
+    "purestorage",
+    "flash array",
+    "ansible",
+    "snippets",
+    "storage",
+    "automation"
+  ],
+  "license": "MIT",
+  "licenseText": "MIT License\n\nCopyright (c) 2023 Rajesh V U",
+  "publisher": "rajeshvu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rajeshvu/vscode-extension-ansible-purefa.git"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ansible-purefa-snippets.search-1.36.0",
+        "title": "Search PureFA Ansible Snippets - v1.36.0"
+      },
+      {
+        "command": "ansible-purefa-snippets.search-1.35.1",
+        "title": "Search PureFA Ansible Snippets - v1.35.1"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  }
+}
