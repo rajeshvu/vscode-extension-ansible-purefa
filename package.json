@@ -1,7 +1,7 @@
 {
   "name": "ansible-purefa-snippets",
   "displayName": "Ansible PureFA Snippets",
-  "description": "Search and insert Pure Storage Flash Array Ansible snippets inside VSCode",
+  "description": "Search and insert Pure Storage Flash Array (PURE FA) Ansible snippets inside VSCode",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.80.0"
