@@ -1,6 +1,6 @@
 # Ansible PureFA Snippets
 
-**Ansible PureFA Snippets** is a Visual Studio Code extension that allows you to quickly search and insert Pure Storage FlashArray (PureFA) Ansible snippets directly into your editor.  
+**Ansible PureFA Snippets** is a Visual Studio Code extension that allows you to quickly search and insert Pure Storage FlashArray (PURE FA) Ansible snippets directly into your editor.  
 This extension helps you automate Pure Storage FlashArray management tasks by providing ready-to-use, trusted Ansible playbook examples.
 
 ## Features
