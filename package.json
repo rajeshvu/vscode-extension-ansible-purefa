@@ -2,7 +2,7 @@
   "name": "ansible-purefa-snippets",
   "displayName": "PureFA Ansible Snippets",
   "description": "Search and insert Pure Storage Flash Array (PURE FA) Ansible snippets inside VSCode",
-  "version": "1.0.0",
+  "version": "1.35.0",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -26,20 +26,18 @@
     "type": "git",
     "url": "https://github.com/rajeshvu/vscode-extension-ansible-purefa.git"
   },
-  "activationEvents": [],
+  "activationEvents": [
+      "onLanguage:yaml"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "ansible-purefa-snippets.search-1.36.0",
-        "title": "PureFA Ansible Snippets - v1.36.0"
-      },
-      {
-        "command": "ansible-purefa-snippets.search-1.35.1",
-        "title": "PureFA Ansible Snippets - v1.35.1"
+        "command": "ansible-purefa-snippets.search-1.35.0",
+        "title": "PureFA Ansible Snippets - v1.35.0"
       }
     ]
-  },
+  }, 
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
