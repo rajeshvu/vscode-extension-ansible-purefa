@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_35_0: ModuleOptions = {
+export const options_1_35_1: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [

@@ -7,7 +7,7 @@ This extension helps you automate Pure Storage FlashArray management tasks by pr
 
 ## Features
 
-- Supports **Pure Storage FlashArray Ansible collection version 1.35.0**.
+- Supports **Pure Storage FlashArray Ansible collection version 1.35.1**.
 - Search for PureFA Ansible snippets by keyword or description.
 - Insert PureFA Ansible tasks into your playbooks with a single click.
 - Snippets cover common storage operations: provisioning, masking, snapshot, replication, and more.
@@ -34,7 +34,7 @@ This extension helps you automate Pure Storage FlashArray management tasks by pr
 
 1. Open a YAML or Ansible playbook file in VS Code.  
 2. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).  
-3. Type and select:- `Search PureFA Ansible Snippets - v1.35.0`  
+3. Type and select:- `Search PureFA Ansible Snippets - v1.35.1`  
 4. Search for a snippet by keyword or description.  
 5. Select a snippet to insert it at your cursor location.  
 
@@ -45,11 +45,11 @@ This extension helps you automate Pure Storage FlashArray management tasks by pr
 
 ### Demos
  
-![PureFA Ansible Snippets - Demo1](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.0/src/resources/demo1.gif)
+![PureFA Ansible Snippets - Demo1](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.1/src/resources/demo1.gif)
 
-![PureFA Ansible Snippets - Demo2](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.0/src/resources/demo2.gif)
+![PureFA Ansible Snippets - Demo2](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.1/src/resources/demo2.gif)
 
-![PureFA Ansible Snippets - Demo3](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.0/src/resources/demo3.gif)
+![PureFA Ansible Snippets - Demo3](https://raw.githubusercontent.com/rajeshvu/vscode-extension-ansible-purefa/refs/heads/release/1.35.1/src/resources/demo3.gif)
 
 ---
 
