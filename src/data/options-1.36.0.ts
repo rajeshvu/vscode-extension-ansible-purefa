@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_35_1: ModuleOptions = {
+export const options_1_36_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -4031,6 +4031,89 @@ export const options_1_35_1: ModuleOptions = {
             "choices": [
                 "absent",
                 "present"
+            ],
+            "type": "str"
+        }
+    },
+    "purestorage.flasharray.purefa_workload": {
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the workload operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        },
+        "host": {
+            "type": "str",
+            "description": [
+                "Host to connect to the workload after provisioning"
+            ],
+            "default": ""
+        },
+        "name": {
+            "description": [
+                "Name of the workload."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether to create or delete a fleet workload.",
+                "Using the expand option will add volume(s) to the workload.",
+                "If absent is specified together with a host, rather than deleting the workload, the host will be disconnected from the workload"
+            ],
+            "default": "present",
+            "choices": [
+                "absent",
+                "present",
+                "expand"
+            ],
+            "type": "str"
+        },
+        "preset": {
+            "description": [
+                "name of existing preset to use as the basis of the workload"
+            ],
+            "type": "str"
+        },
+        "rename": {
+            "description": [
+                "new name for a workload"
+            ],
+            "type": "str"
+        },
+        "eradicate": {
+            "description": [
+                "whether to eradicate a workload"
+            ],
+            "type": "bool",
+            "default": false
+        },
+        "placement": {
+            "description": [
+                "name of target on which the workload will be deployed"
+            ],
+            "type": "str"
+        },
+        "recommendation": {
+            "description": [
+                "whether to use the Fusion placement recommendation based on the workload preset definitions.",
+                "This will use the first recommended placement if more than one is available"
+            ],
+            "default": false,
+            "type": "bool"
+        },
+        "volume_count": {
+            "description": [
+                "Number of additional volumes to add to an existing workload"
+            ],
+            "type": "int"
+        },
+        "volume_configuration": {
+            "description": [
+                "Name of the volume configuration to use for adding volumes to a workload"
             ],
             "type": "str"
         }
