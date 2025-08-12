@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_35_0: SnippetItem[] = [
+export const snippets_1_36_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -1275,5 +1275,50 @@ export const snippets_1_35_0: SnippetItem[] = [
         "label": "Update an existing tag in namespace test for volume foo",
         "description": "- purestorage.flasharray.purefa_volume_tags",
         "body": "- name: Update an existing tag in namespace test for volume foo\n  purestorage.flasharray.purefa_volume_tags:\n    name: foo\n    namespace: test\n    kvp:\n    - key1:value2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
+    },
+    {
+        "label": "Create a workload using an exisitng preset on a specific placement target and connect to host myhost",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Create a workload using an exisitng preset on a specific placement target\n    and connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    placement: arrayB\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Create a workload using an exisitng preset using the recommended target and connect to host myhost",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Create a workload using an exisitng preset using the recommended target and\n    connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    recommendation: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Add volumes to workload foo based on volume configuration fin and connect to host myhost",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Add volumes to workload foo based on volume configuration fin and connect\n    to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    volume_configuration: fin\n    volume_count: 3\n    host: myhost\n    state: expand\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Rename an existing workload",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Rename an existing workload\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    rename: bar\n    state: rename\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Disconnect an existing workload from host",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Disconnect an existing workload from host\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    host: myhost\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Delete an existing workload",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Delete an existing workload\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Eradicate an existing workload",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Eradicate an existing workload\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    state: absent\n    eradicate: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Recover a deleted workload",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Recover a deleted workload\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    state: present\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Reconnect an existing workload to a host",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Reconnect an existing workload to a host\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    host: myhost\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     }
 ]
