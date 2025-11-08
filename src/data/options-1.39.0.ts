@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_38_0: ModuleOptions = {
+export const options_1_39_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -238,6 +238,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "required": true
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_audits": {
@@ -255,6 +264,15 @@ export const options_1_38_0: ModuleOptions = {
                 "If not provided, the module will attempt to get the current local timezone from the server however from Purity//FA 6.5.3 this value will calculated automatically from the FlashArray"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_banner": {
@@ -275,6 +293,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "default": "Welcome to the machine..."
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_cbsexpand": {
@@ -488,6 +515,15 @@ export const options_1_38_0: ModuleOptions = {
             "type": "bool",
             "default": false,
             "version_added": "1.30.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_console": {
@@ -502,6 +538,15 @@ export const options_1_38_0: ModuleOptions = {
                 "enable",
                 "disable"
             ]
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_default_protection": {
@@ -591,6 +636,15 @@ export const options_1_38_0: ModuleOptions = {
                 "Value to rename the specified directory to"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_dirsnap": {
@@ -671,6 +725,15 @@ export const options_1_38_0: ModuleOptions = {
                 "If not specified on create will default to 0 (no retention period)"
             ],
             "type": "int"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_dns": {
@@ -822,6 +885,15 @@ export const options_1_38_0: ModuleOptions = {
                 "Includes the \"-----BEGIN CERTIFICATE-----\" and \"-----END CERTIFICATE-----\" lines"
             ],
             "version_added": "1.24.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_dsrole": {
@@ -869,6 +941,15 @@ export const options_1_38_0: ModuleOptions = {
                 "Sets the common Name (CN) of the configured directory service group containing users for the FlashBlade. This name should be just the Common Name of the group without the CN= specifier.",
                 "Common Names should not exceed 64 characters in length."
             ]
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_dsrole_old": {
@@ -955,15 +1036,37 @@ export const options_1_38_0: ModuleOptions = {
                 "name of hostgroup to attach endpoint to"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the volume operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
+        },
+        "container_version": {
+            "description": [
+                "Defines vCenter and EXSi host compatibility of the protocol endpoint and its associated container."
+            ],
+            "type": "int",
+            "choices": [
+                1,
+                2,
+                3
+            ],
+            "default": 1,
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_eradication": {
         "timer": {
             "description": [
                 "Set the eradication timer for the FlashArray",
-                "Allowed values are integers from 1 to 30. Default is 1"
+                "Allowed values are integers from 1 to 30. Default is 1",
+                "This parameter is not allowed to be specified with I(disabled_delay) or I(enabled_delay)"
             ],
-            "default": 1,
             "type": "int"
         },
         "disabled_delay": {
@@ -983,6 +1086,15 @@ export const options_1_38_0: ModuleOptions = {
             "default": 1,
             "type": "int",
             "version_added": "1.22.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_eula": {
@@ -1053,6 +1165,15 @@ export const options_1_38_0: ModuleOptions = {
                 "Name of SMB Policy to apply to the export"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_file": {
@@ -1179,6 +1300,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "version_added": "1.13.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_hardware": {
@@ -1260,7 +1390,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -1454,7 +1584,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -1580,7 +1710,7 @@ export const options_1_38_0: ModuleOptions = {
             "default": 3600,
             "description": [
                 "Maintenance window period, specified in seconds.",
-                "Range allowed is 1 minute (60 seconds) to 24 hours (86400 seconds)",
+                "Range allowed is 1 hour (3600 seconds) to 48 hours (172800 seconds)",
                 "Default setting is 1 hour (3600 seconds)"
             ]
         }
@@ -1623,6 +1753,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "default": "1w"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_network": {
@@ -1917,6 +2056,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "version_added": "1.32.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_pg": {
@@ -2008,7 +2156,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -2140,7 +2288,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -2259,7 +2407,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -2400,7 +2548,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -2480,7 +2628,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -2804,6 +2952,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "str",
             "version_added": "1.34.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_proxy": {
@@ -3212,7 +3369,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -3537,6 +3694,15 @@ export const options_1_38_0: ModuleOptions = {
             "description": [
                 "If messages that are necessary in order to audit TLS negotiations performed by the array are forwared to the syslog servers."
             ]
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_timeout": {
@@ -3557,6 +3723,15 @@ export const options_1_38_0: ModuleOptions = {
             ],
             "type": "int",
             "default": 30
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.39.0"
         }
     },
     "purestorage.flasharray.purefa_token": {
@@ -3796,7 +3971,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -4045,7 +4220,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
@@ -4106,7 +4281,7 @@ export const options_1_38_0: ModuleOptions = {
         },
         "context": {
             "description": [
-                "Name of fleet member on which to perform the volume operation.",
+                "Name of fleet member on which to perform the operation.",
                 "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
             ],
             "type": "str",
