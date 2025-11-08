@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_37_1: ModuleOptions = {
+export const options_1_38_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -4080,12 +4080,18 @@ export const options_1_37_1: ModuleOptions = {
                 "List of key value pairs to assign to the volume.",
                 "Seperate the key from the value using a colon (:) only.",
                 "All items in list will use I(namespace) and I(copyable) settings.",
-                "Maximum of 5 tags per volume",
                 "See examples for exact formatting requirements"
             ],
             "type": "list",
+            "elements": "str"
+        },
+        "tag": {
+            "description": [
+                "List of volume tags to be deleted from a volume"
+            ],
+            "type": "list",
             "elements": "str",
-            "required": true
+            "version_added": "1.38.0"
         },
         "state": {
             "description": [
@@ -4097,6 +4103,15 @@ export const options_1_37_1: ModuleOptions = {
                 "present"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the volume operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.38.0"
         }
     },
     "purestorage.flasharray.purefa_workload": {

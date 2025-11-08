@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_37_1: SnippetItem[] = [
+export const snippets_1_38_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -1277,9 +1277,9 @@ export const snippets_1_37_1: SnippetItem[] = [
         "body": "- name: Create new tags in namespace test for volume foo\n  purestorage.flasharray.purefa_volume_tags:\n    name: foo\n    namespace: test\n    copyable: false\n    kvp:\n    - key1:value1\n    - key2:value2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Remove an existing tag in namespace test for volume foo",
+        "label": "Remove existing tags, by key, in namespace test for volume foo",
         "description": "- purestorage.flasharray.purefa_volume_tags",
-        "body": "- name: Remove an existing tag in namespace test for volume foo\n  purestorage.flasharray.purefa_volume_tags:\n    name: foo\n    namespace: test\n    kvp:\n    - key1:value1\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: absent\n"
+        "body": "- name: Remove existing tags, by key, in namespace test for volume foo\n  purestorage.flasharray.purefa_volume_tags:\n    name: foo\n    namespace: test\n    tag:\n    - key1\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: absent\n"
     },
     {
         "label": "Update an existing tag in namespace test for volume foo",
