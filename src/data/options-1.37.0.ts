@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_36_0: ModuleOptions = {
+export const options_1_37_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -542,6 +542,15 @@ export const options_1_36_0: ModuleOptions = {
                 "present"
             ],
             "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.37.0"
         }
     },
     "purestorage.flasharray.purefa_directory": {
@@ -1483,7 +1492,7 @@ export const options_1_36_0: ModuleOptions = {
     "purestorage.flasharray.purefa_info": {
         "gather_subset": {
             "description": [
-                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms and fleet."
+                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms, fleet, presets and workloads."
             ],
             "type": "list",
             "elements": "str",
@@ -1757,6 +1766,15 @@ export const options_1_36_0: ModuleOptions = {
                 "Setting this parameter is not idempotent."
             ],
             "version_added": "1.22.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the ntp operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.37.0"
         }
     },
     "purestorage.flasharray.purefa_offload": {
@@ -2388,6 +2406,34 @@ export const options_1_36_0: ModuleOptions = {
             "type": "str",
             "default": "",
             "version_added": "1.33.0"
+        },
+        "with_default_protection": {
+            "description": [
+                "Whether to keep the default container protection for the pod",
+                "Only applicable for first creation of a pod"
+            ],
+            "type": "bool",
+            "default": true,
+            "version_added": "1.37.0"
+        },
+        "default_protection_pg": {
+            "description": [
+                "Name of the default protection default for the pod",
+                "Only applicable for existing pods",
+                "Name must include the pod name",
+                "Will create the PG in the pod if it doesn't already exist",
+                "To remove an existing defaul protection group provide I([])"
+            ],
+            "type": "str",
+            "version_added": "1.37.0"
+        },
+        "retention_lock": {
+            "description": [
+                "Define if I(default_protection_pg) has retention lock enabled"
+            ],
+            "type": "bool",
+            "default": true,
+            "version_added": "1.37.0"
         }
     },
     "purestorage.flasharray.purefa_pod_replica": {
@@ -3452,6 +3498,15 @@ export const options_1_36_0: ModuleOptions = {
             ],
             "type": "str",
             "required": true
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the syslog operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.37.0"
         }
     },
     "purestorage.flasharray.purefa_syslog_settings": {
@@ -3625,6 +3680,15 @@ export const options_1_36_0: ModuleOptions = {
             ],
             "type": "str",
             "version_added": "1.34.0"
+        },
+        "ad_user": {
+            "description": [
+                "Whether the user is in the AD system",
+                "Not required for local users"
+            ],
+            "type": "bool",
+            "default": false,
+            "version_added": "1.37.0"
         }
     },
     "purestorage.flasharray.purefa_vg": {

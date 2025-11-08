@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_36_0: SnippetItem[] = [
+export const snippets_1_37_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -757,9 +757,14 @@ export const snippets_1_36_0: SnippetItem[] = [
         "body": "- name: Disable Phonehome\n  purestorage.flasharray.purefa_phonehome:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Create new pod named foo",
+        "label": "Create new pod named foo without SafeMode default protection",
         "description": "- purestorage.flasharray.purefa_pod",
-        "body": "- name: Create new pod named foo\n  purestorage.flasharray.purefa_pod:\n    name: foo\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
+        "body": "- name: Create new pod named foo without SafeMode default protection\n  purestorage.flasharray.purefa_pod:\n    name: foo\n    with_default_protection: false\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
+    },
+    {
+        "label": "Create new pod named foo with default protection PG safe, and with PG retention lock disabled",
+        "description": "- purestorage.flasharray.purefa_pod",
+        "body": "- name: Create new pod named foo with default protection PG safe, and with PG retention\n    lock disabled\n  purestorage.flasharray.purefa_pod:\n    name: foo\n    default_protection_pg: safe\n    retention_lock: false\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
     },
     {
         "label": "Delete and eradicate pod named foo",
@@ -1130,6 +1135,11 @@ export const snippets_1_36_0: SnippetItem[] = [
         "label": "Change password type for existing user (NOT IDEMPOTENT)",
         "description": "- purestorage.flasharray.purefa_user",
         "body": "- name: Change password type for existing user (NOT IDEMPOTENT)\n  purestorage.flasharray.purefa_user:\n    name: ansible\n    password: anewpassword\n    old_password: apassword\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Create an API token (TTL of 2 days) and assign a public key to an AD user",
+        "description": "- purestorage.flasharray.purefa_user",
+        "body": "- name: Create an API token (TTL of 2 days) and assign a public key to an AD user\n  purestorage.flasharray.purefa_user:\n    name: ansible-ad\n    ad_user: true\n    public_key: '{{lookup(''file'', ''id_rsa.pub'') }}'\n    api: true\n    timeout: 2d\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Change API token and token timeout for existing user",
