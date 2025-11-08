@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_39_0: ModuleOptions = {
+export const options_1_40_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -510,7 +510,7 @@ export const options_1_39_0: ModuleOptions = {
         },
         "encrypted": {
             "description": [
-                "Defines if the array connection will be encryted"
+                "Defines if the array connection will be encrypted"
             ],
             "type": "bool",
             "default": false,
@@ -524,6 +524,24 @@ export const options_1_39_0: ModuleOptions = {
             "type": "str",
             "default": "",
             "version_added": "1.39.0"
+        },
+        "renew_key": {
+            "description": [
+                "Update array connection with a new encryption key.",
+                "If set to true, other array connection attributes will not be modified."
+            ],
+            "type": "bool",
+            "default": false,
+            "version_added": "1.40.0"
+        },
+        "refresh": {
+            "description": [
+                "Array will attempt to communicate with the connection peer in order to update the connection attributes on both arrays with any changes that have occurred.",
+                "If set to true, other array connection attributes will not be modified."
+            ],
+            "type": "bool",
+            "default": false,
+            "version_added": "1.40.0"
         }
     },
     "purestorage.flasharray.purefa_console": {
@@ -788,6 +806,15 @@ export const options_1_39_0: ModuleOptions = {
             ],
             "type": "str",
             "version_added": "1.14.0"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": "",
+            "version_added": "1.40.0"
         }
     },
     "purestorage.flasharray.purefa_ds": {
@@ -2426,6 +2453,17 @@ export const options_1_39_0: ModuleOptions = {
                 "present",
                 "absent"
             ]
+        },
+        "excludes": {
+            "description": [
+                "Items that are excluded from phonehome data collection"
+            ],
+            "type": "list",
+            "elements": "str",
+            "choices": [
+                "application-insights"
+            ],
+            "version_added": "1.40.0"
         }
     },
     "purestorage.flasharray.purefa_pod": {
@@ -2961,6 +2999,15 @@ export const options_1_39_0: ModuleOptions = {
             "type": "str",
             "default": "",
             "version_added": "1.39.0"
+        },
+        "continuous_availability": {
+            "description": [
+                "Defines if continuous availability on the policy.",
+                "When continuous availability is enabled on a policy, file shares are accessible during otherwise disruptive scenarios such as temporary network outages, controller upgrades or failovers."
+            ],
+            "type": "bool",
+            "default": false,
+            "version_added": "1.40.0"
         }
     },
     "purestorage.flasharray.purefa_proxy": {
@@ -3591,7 +3638,8 @@ export const options_1_39_0: ModuleOptions = {
         },
         "gateway": {
             "description": [
-                "IPv4 or IPv6 address of subnet gateway."
+                "IPv4 or IPv6 address of subnet gateway.",
+                "To clear the gateway enter \"0.0.0.0\" or \"::\" depending on IP type"
             ],
             "required": false,
             "type": "str"
