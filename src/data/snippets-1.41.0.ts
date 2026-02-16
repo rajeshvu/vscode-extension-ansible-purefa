@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_40_0: SnippetItem[] = [
+export const snippets_1_41_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -894,7 +894,7 @@ export const snippets_1_40_0: SnippetItem[] = [
     {
         "label": "Update password police management",
         "description": "- purestorage.flasharray.purefa_policy",
-        "body": "- name: Update password police management\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_login_attempts: 5\n    enforce_username_check: true\n    enforce_dictopnary_check: true\n    min_password_length: 5\n    password_history: 2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Update password police management\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_login_attempts: 5\n    enforce_username_check: true\n    enforce_dictionary_check: true\n    min_password_length: 5\n    password_history: 2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Delete exisitng proxy settings",
