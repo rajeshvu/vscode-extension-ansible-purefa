@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_41_0: SnippetItem[] = [
+export const snippets_1_42_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -77,9 +77,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Expand CBS to new capacity\n  purestorage.flasharray.purefa_cbsexpand:\n    state: expand\n    capacity: 10995116277760\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Create SSL certifcate foo",
+        "label": "Create SSL certificate foo",
         "description": "- purestorage.flasharray.purefa_certs",
-        "body": "- name: Create SSL certifcate foo\n  purestorage.flasharray.purefa_certs:\n    name: foo\n    key_size: 4096\n    country: US\n    province: FL\n    locality: Miami\n    organization: Acme Inc\n    org_unit: DevOps\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create SSL certificate foo\n  purestorage.flasharray.purefa_certs:\n    name: foo\n    key_size: 4096\n    country: US\n    province: FL\n    locality: Miami\n    organization: Acme Inc\n    org_unit: DevOps\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Delete SSL certificate foo",
@@ -152,9 +152,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Clear default protection for the array\n  purestorage.flasharray.purefa_default_protection:\n    name: ''\n    scope: array\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: absent\n"
     },
     {
-        "label": "Create direcotry foo in filesysten bar with path zeta",
+        "label": "Create directory foo in filesysten bar with path zeta",
         "description": "- purestorage.flasharray.purefa_directory",
-        "body": "- name: Create direcotry foo in filesysten bar with path zeta\n  purestorage.flasharray.purefa_directory:\n    name: foo\n    filesystem: bar\n    path: zeta\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create directory foo in filesysten bar with path zeta\n  purestorage.flasharray.purefa_directory:\n    name: foo\n    filesystem: bar\n    path: zeta\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Rename directory foo to fin in filesystem bar",
@@ -162,14 +162,14 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Rename directory foo to fin in filesystem bar\n  purestorage.flasharray.purefa_directory:\n    name: foo\n    rename: fin\n    filesystem: bar\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete diectory foo in filesystem bar",
+        "label": "Delete directory foo in filesystem bar",
         "description": "- purestorage.flasharray.purefa_directory",
-        "body": "- name: Delete diectory foo in filesystem bar\n  purestorage.flasharray.purefa_directory:\n    name: foo\n    filesystem: bar\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete directory foo in filesystem bar\n  purestorage.flasharray.purefa_directory:\n    name: foo\n    filesystem: bar\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Create a snapshot direcotry foo in filesysten bar for client test with suffix test",
+        "label": "Create a snapshot directory foo in filesysten bar for client test with suffix test",
         "description": "- purestorage.flasharray.purefa_dirsnap",
-        "body": "- name: Create a snapshot direcotry foo in filesysten bar for client test with suffix\n    test\n  purestorage.flasharray.purefa_dirsnap:\n    name: foo\n    filesystem: bar\n    client: test\n    suffix: test\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create a snapshot directory foo in filesysten bar for client test with suffix\n    test\n  purestorage.flasharray.purefa_dirsnap:\n    name: foo\n    filesystem: bar\n    client: test\n    suffix: test\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Update retention time for a snapshot foo:bar.client.test",
@@ -202,9 +202,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Rename snapshot\n  purestorage.flasharray.purefa_dirsnap:\n    name: foo\n    filesystem: bar\n    client: client\n    suffix: test\n    rename: true\n    new_client: client2\n    new_suffix: test2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng management DNS settings",
+        "label": "Delete existing management DNS settings",
         "description": "- purestorage.flasharray.purefa_dns",
-        "body": "- name: Delete exisitng management DNS settings\n  purestorage.flasharray.purefa_dns:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing management DNS settings\n  purestorage.flasharray.purefa_dns:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set managemnt DNS settings",
@@ -252,9 +252,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Upload CA certificate for management DNS and check peer\n  purestorage.flasharray.purefa_ds:\n    enable: true\n    dstype: management\n    certificate: '{{lookup(''file'', ''ca_cert.pem'') }}'\n    check_peer: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng array_admin directory service role",
+        "label": "Delete existing array_admin directory service role",
         "description": "- purestorage.flasharray.purefa_dsrole",
-        "body": "- name: Delete exisitng array_admin directory service role\n  purestorage.flasharray.purefa_dsrole:\n    role: array_admin\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing array_admin directory service role\n  purestorage.flasharray.purefa_dsrole:\n    role: array_admin\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Create observability directory service role with readonly policy",
@@ -272,9 +272,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Update directory service role policy\n  purestorage.flasharray.purefa_dsrole:\n    name: observability\n    role: ops_admin\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng array_admin directory service role",
+        "label": "Delete existing array_admin directory service role",
         "description": "- purestorage.flasharray.purefa_dsrole_old",
-        "body": "- name: Delete exisitng array_admin directory service role\n  purestorage.flasharray.purefa_dsrole_old:\n    role: array_admin\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing array_admin directory service role\n  purestorage.flasharray.purefa_dsrole_old:\n    role: array_admin\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Create array_admin directory service role",
@@ -297,9 +297,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Delete and eradicate endpoint named foo\n  purestorage.flasharray.purefa_endpoint:\n    name: foo\n    eradicate: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: absent\n"
     },
     {
-        "label": "Rename endpoint foor to bar",
+        "label": "Rename endpoint foo to bar",
         "description": "- purestorage.flasharray.purefa_endpoint",
-        "body": "- name: Rename endpoint foor to bar\n  purestorage.flasharray.purefa_endpoint:\n    name: foo\n    rename: bar\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Rename endpoint foo to bar\n  purestorage.flasharray.purefa_endpoint:\n    name: foo\n    rename: bar\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set eradication timer to 30 days",
@@ -332,14 +332,14 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Copy a file from dir foo to dir bar\n  purestorage.flasharray.purefa_file:\n    source_file: /directory1/file1\n    source_dir: fs1:root\n    target_file: /diff_dir/file1\n    target_dir: fs1:root\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Copy a file in a direcotry to the same directory with a different name",
+        "label": "Copy a file in a directory to the same directory with a different name",
         "description": "- purestorage.flasharray.purefa_file",
-        "body": "- name: Copy a file in a direcotry to the same directory with a different name\n  purestorage.flasharray.purefa_file:\n    source_file: /directory1/file1\n    source_dir: fs1:root\n    target_file: /directory_1/file2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Copy a file in a directory to the same directory with a different name\n  purestorage.flasharray.purefa_file:\n    source_file: /directory1/file1\n    source_dir: fs1:root\n    target_file: /directory_1/file2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Copy a file in a direcotry to an existing file with overwrite",
+        "label": "Copy a file in a directory to an existing file with overwrite",
         "description": "- purestorage.flasharray.purefa_file",
-        "body": "- name: Copy a file in a direcotry to an existing file with overwrite\n  purestorage.flasharray.purefa_file:\n    source_file: /directory1/file1\n    source_dir: fs1:root\n    target_file: /diff_dir/file1\n    target_dir: fs2:root\n    overwrite: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Copy a file in a directory to an existing file with overwrite\n  purestorage.flasharray.purefa_file:\n    source_file: /directory1/file1\n    source_dir: fs1:root\n    target_file: /diff_dir/file1\n    target_dir: fs2:root\n    overwrite: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Create a new fleet",
@@ -482,9 +482,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Delete preferred arrays from host foo\n  purestorage.flasharray.purefa_host:\n    name: foo\n    preferred_array: delete\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng WWNs from host foo (does not delete host object)",
+        "label": "Delete existing WWNs from host foo (does not delete host object)",
         "description": "- purestorage.flasharray.purefa_host",
-        "body": "- name: Delete exisitng WWNs from host foo (does not delete host object)\n  purestorage.flasharray.purefa_host:\n    name: foo\n    wwns: ''\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing WWNs from host foo (does not delete host object)\n  purestorage.flasharray.purefa_host:\n    name: foo\n    wwns: ''\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set CHAP target and host username/password pairs",
@@ -527,14 +527,14 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: collect all information\n  purestorage.flasharray.purefa_info:\n    gather_subset:\n    - all\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "collect FlashArray invenroty",
+        "label": "collect FlashArray inventory",
         "description": "- purestorage.flasharray.purefa_inventory",
-        "body": "- name: collect FlashArray invenroty\n  purestorage.flasharray.purefa_inventory:\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: collect FlashArray inventory\n  purestorage.flasharray.purefa_inventory:\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Create KMIP obejct",
+        "label": "Create KMIP object",
         "description": "- purestorage.flasharray.purefa_kmip",
-        "body": "- name: Create KMIP obejct\n  purestorage.flasharray.purefa_kmip:\n    name: foo\n    certificate: bar\n    ca_certificate: '{{lookup(''file'', ''example.crt'') }}'\n    uris:\n    - 1.1.1.1:8888\n    - 2.3.3.3:9999\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create KMIP object\n  purestorage.flasharray.purefa_kmip:\n    name: foo\n    certificate: bar\n    ca_certificate: '{{lookup(''file'', ''example.crt'') }}'\n    uris:\n    - 1.1.1.1:8888\n    - 2.3.3.3:9999\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Delete KMIP object",
@@ -557,9 +557,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: List last 24 session events\n  purestorage.flasharray.purefa_logging:\n    limit: 24\n    log_type: session\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng maintenance window",
+        "label": "Delete existing maintenance window",
         "description": "- purestorage.flasharray.purefa_maintenance",
-        "body": "- name: Delete exisitng maintenance window\n  purestorage.flasharray.purefa_maintenance:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing maintenance window\n  purestorage.flasharray.purefa_maintenance:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set maintnence window to default of 1 hour",
@@ -597,9 +597,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Change service list for FC interface ct0.fc1\n  purestorage.flasharray.purefa_network:\n    name: ct0.fc1\n    servicelist:\n    - replication\n    fa_url: 10.10.10.2\n    api_token: c6033033-fe69-2515-a9e8-966bb7fe4b40\n"
     },
     {
-        "label": "Delete exisitng NTP server entries",
+        "label": "Delete existing NTP server entries",
         "description": "- purestorage.flasharray.purefa_ntp",
-        "body": "- name: Delete exisitng NTP server entries\n  purestorage.flasharray.purefa_ntp:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing NTP server entries\n  purestorage.flasharray.purefa_ntp:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set array NTP servers",
@@ -732,9 +732,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Restore AC pod  protection group snapshot pod1::pgname.snap.data to pod1::data2\n  purestorage.flasharray.purefa_pgsnap:\n    name: pod1::pgname\n    suffix: snap\n    restore: data\n    target: pod1::data2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: copy\n"
     },
     {
-        "label": "Create snapshot of existing pgroup foo with suffix and force immeadiate copy to remote targets",
+        "label": "Create snapshot of existing pgroup foo with suffix and force immediate copy to remote targets",
         "description": "- purestorage.flasharray.purefa_pgsnap",
-        "body": "- name: Create snapshot of existing pgroup foo with suffix and force immeadiate copy\n    to remote targets\n  purestorage.flasharray.purefa_pgsnap:\n    name: pgname\n    suffix: force\n    now: true\n    apply_retention: true\n    remote: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create snapshot of existing pgroup foo with suffix and force immediate copy\n    to remote targets\n  purestorage.flasharray.purefa_pgsnap:\n    name: pgname\n    suffix: force\n    now: true\n    apply_retention: true\n    remote: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Delete and eradicate snapshot named foo.snap on offload target bar from arrayA",
@@ -897,9 +897,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Update password police management\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_login_attempts: 5\n    enforce_username_check: true\n    enforce_dictionary_check: true\n    min_password_length: 5\n    password_history: 2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng proxy settings",
+        "label": "Delete existing proxy settings",
         "description": "- purestorage.flasharray.purefa_proxy",
-        "body": "- name: Delete exisitng proxy settings\n  purestorage.flasharray.purefa_proxy:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing proxy settings\n  purestorage.flasharray.purefa_proxy:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set proxy settings",
@@ -972,9 +972,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Disable SMI-S and SLP\n  purestorage.flasharray.purefa_smis:\n    smis: false\n    slp: false\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng SMTP settings",
+        "label": "Delete existing SMTP settings",
         "description": "- purestorage.flasharray.purefa_smtp",
-        "body": "- name: Delete exisitng SMTP settings\n  purestorage.flasharray.purefa_smtp:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing SMTP settings\n  purestorage.flasharray.purefa_smtp:\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set SMTP settings",
@@ -1022,9 +1022,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Delete and eradicate a volume snapshot foo.1 on offload device arrayB\n  purestorage.flasharray.purefa_snap:\n    name: foo\n    suffix: 1\n    offload: arrayB\n    eradicate: true\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete exisitng SNMP manager",
+        "label": "Delete existing SNMP manager",
         "description": "- purestorage.flasharray.purefa_snmp",
-        "body": "- name: Delete exisitng SNMP manager\n  purestorage.flasharray.purefa_snmp:\n    name: manager1\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing SNMP manager\n  purestorage.flasharray.purefa_snmp:\n    name: manager1\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Update existing SNMP manager",
@@ -1097,9 +1097,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Change syslog servers settings\n  purestorage.flasharray.purefa_syslog_settings:\n    tls_audit: false\n    severity: debug\n    ca_certificate: '{{lookup(''file'', ''example.crt'') }}'\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Delete existing CA certifcate for syslog servers settings",
+        "label": "Delete existing CA certificate for syslog servers settings",
         "description": "- purestorage.flasharray.purefa_syslog_settings",
-        "body": "- name: Delete existing CA certifcate for syslog servers settings\n  purestorage.flasharray.purefa_syslog_settings:\n    ca_certificate: DELETE\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Delete existing CA certificate for syslog servers settings\n  purestorage.flasharray.purefa_syslog_settings:\n    ca_certificate: DELETE\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Set GUI idle timeout to 25 minutes",
@@ -1197,9 +1197,9 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Disable VLAN interface for subnet test on ct1.eth2\n  purestorage.flasharray.purefa_vlan:\n    name: ct1.eth2\n    subnet: test\n    enabled: false\n    fa_url: 10.10.10.2\n    api_token: c6033033-fe69-2515-a9e8-966bb7fe4b40\n"
     },
     {
-        "label": "Delete VLAN inteface for subnet test on ct0.eth4",
+        "label": "Delete VLAN interface for subnet test on ct0.eth4",
         "description": "- purestorage.flasharray.purefa_vlan",
-        "body": "- name: Delete VLAN inteface for subnet test on ct0.eth4\n  purestorage.flasharray.purefa_vlan:\n    name: ct0.eth4\n    subnet: test\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: c6033033-fe69-2515-a9e8-966bb7fe4b40\n"
+        "body": "- name: Delete VLAN interface for subnet test on ct0.eth4\n  purestorage.flasharray.purefa_vlan:\n    name: ct0.eth4\n    subnet: test\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: c6033033-fe69-2515-a9e8-966bb7fe4b40\n"
     },
     {
         "label": "Enable VNC for application test",
@@ -1219,7 +1219,7 @@ export const snippets_1_41_0: SnippetItem[] = [
     {
         "label": "Create new volume named foo with a DMM priority (Purity//FA 6.1.2+)",
         "description": "- purestorage.flasharray.purefa_volume",
-        "body": "- name: Create new volume named foo with a DMM priority (Purity//FA 6.1.2+)\n  purestorage.flasharray.purefa_volume:\n    name: foo\n    size: 1T\n    priority_operator: +\n    priorty_value: 10\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
+        "body": "- name: Create new volume named foo with a DMM priority (Purity//FA 6.1.2+)\n  purestorage.flasharray.purefa_volume:\n    name: foo\n    size: 1T\n    priority_operator: +\n    priority_value: 10\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
     },
     {
         "label": "Create new volume named foo in protection group pg1 (this cannot be used with context)",
@@ -1287,14 +1287,14 @@ export const snippets_1_41_0: SnippetItem[] = [
         "body": "- name: Update an existing tag in namespace test for volume foo\n  purestorage.flasharray.purefa_volume_tags:\n    name: foo\n    namespace: test\n    kvp:\n    - key1:value2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
     },
     {
-        "label": "Create a workload using an exisitng preset on a specific placement target and connect to host myhost",
+        "label": "Create a workload using an existing preset on a specific placement target and connect to host myhost",
         "description": "- purestorage.flasharray.purefa_workload",
-        "body": "- name: Create a workload using an exisitng preset on a specific placement target\n    and connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    placement: arrayB\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create a workload using an existing preset on a specific placement target\n    and connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    placement: arrayB\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Create a workload using an exisitng preset using the recommended target and connect to host myhost",
+        "label": "Create a workload using an existing preset using the recommended target and connect to host myhost",
         "description": "- purestorage.flasharray.purefa_workload",
-        "body": "- name: Create a workload using an exisitng preset using the recommended target and\n    connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    recommendation: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create a workload using an existing preset using the recommended target and\n    connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    recommendation: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Add volumes to workload foo based on volume configuration fin and connect to host myhost",

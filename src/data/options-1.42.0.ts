@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_41_0: ModuleOptions = {
+export const options_1_42_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -106,7 +106,7 @@ export const options_1_41_0: ModuleOptions = {
     "purestorage.flasharray.purefa_admin": {
         "sso": {
             "description": [
-                "Enable or disable the array Signle Sign-On from Pure1 Manage"
+                "Enable or disable the array Single Sign-On from Pure1 Manage"
             ],
             "default": false,
             "type": "bool"
@@ -278,7 +278,7 @@ export const options_1_41_0: ModuleOptions = {
     "purestorage.flasharray.purefa_banner": {
         "state": {
             "description": [
-                "Set ot delete the MOTD"
+                "Set or delete the MOTD"
             ],
             "default": "present",
             "type": "str",
@@ -338,7 +338,7 @@ export const options_1_41_0: ModuleOptions = {
                 "I(present) will create or re-create an SSL certificate",
                 "I(absent) will delete an existing SSL certificate",
                 "I(sign) will construct a Certificate Signing request (CSR)",
-                "I(export) will export the exisitng SSL certificate",
+                "I(export) will export the existing SSL certificate",
                 "I(import) will import a CA provided certificate."
             ],
             "default": "present",
@@ -430,7 +430,7 @@ export const options_1_41_0: ModuleOptions = {
             "type": "str",
             "description": [
                 "Required for I(import)",
-                "A valid signed certicate in PEM format (Base64 encoded)",
+                "A valid signed certificate in PEM format (Base64 encoded)",
                 "Includes the \"-----BEGIN CERTIFICATE-----\" and \"-----END CERTIFICATE-----\" lines"
             ]
         },
@@ -729,7 +729,7 @@ export const options_1_41_0: ModuleOptions = {
             "description": [
                 "Whether to rename a directory snapshot",
                 "The snapshot client name and suffix can be changed",
-                "Required with I(new_client) ans I(new_suffix)"
+                "Required with I(new_client) and I(new_suffix)"
             ],
             "type": "bool",
             "default": false,
@@ -790,7 +790,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "service": {
             "description": [
-                "Type of ser vice the DNS will work with"
+                "Type of service the DNS will work with"
             ],
             "type": "str",
             "version_added": "1.14.0",
@@ -908,7 +908,7 @@ export const options_1_41_0: ModuleOptions = {
             "type": "str",
             "description": [
                 "The certificate of the Certificate Authority (CA) that signed the certificates of the directory servers, which is used to validate the authenticity of the configured servers",
-                "A valid signed certicate in PEM format (Base64 encoded)",
+                "A valid signed certificate in PEM format (Base64 encoded)",
                 "Includes the \"-----BEGIN CERTIFICATE-----\" and \"-----END CERTIFICATE-----\" lines"
             ],
             "version_added": "1.24.0"
@@ -927,7 +927,7 @@ export const options_1_41_0: ModuleOptions = {
         "name": {
             "description": [
                 "Name of role",
-                "If not providied, will be assinged to the same as I(role)"
+                "If not providied, will be assigned to the same as I(role)"
             ],
             "type": "str",
             "version_added": "1.32.0"
@@ -1667,7 +1667,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "certificate": {
             "description": [
-                "Name of existing certifcate used to verify FlashArray authenticity to the KMIP server.",
+                "Name of existing certificate used to verify FlashArray authenticity to the KMIP server.",
                 "Use the I(purestorage.flasharray.purefa_certs) module to create certificates."
             ],
             "type": "str"
@@ -1965,7 +1965,7 @@ export const options_1_41_0: ModuleOptions = {
         "protocol": {
             "description": [
                 "Define which protocol the offload engine uses",
-                "NFS is not a supported protocl from Purity//FA 6.6.0 and higher"
+                "NFS is not a supported protocol from Purity//FA 6.6.0 and higher"
             ],
             "default": "nfs",
             "choices": [
@@ -1990,7 +1990,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "options": {
             "description": [
-                "Additonal mount options for the NFS share",
+                "Additional mount options for the NFS share",
                 "Supported mount options include I(port), I(rsize), I(wsize), I(nfsvers), and I(tcp) or I(udp)"
             ],
             "required": false,
@@ -2160,7 +2160,7 @@ export const options_1_41_0: ModuleOptions = {
                 "List of remote arrays or offload target for replication protection group to connect to.",
                 "Note that all replicated protection groups are asynchronous.",
                 "Target arrays or offload targets must already be connected to the source array.",
-                "Maximum number of targets per Portection Group is 4, assuming your configuration suppors this."
+                "Maximum number of targets per Portection Group is 4, assuming your configuration supports this."
             ],
             "type": "list",
             "elements": "str"
@@ -2389,7 +2389,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "now": {
             "description": [
-                "Whether to initiate a snapshot of the protection group immeadiately"
+                "Whether to initiate a snapshot of the protection group immediately"
             ],
             "type": "bool",
             "default": false
@@ -2403,7 +2403,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "remote": {
             "description": [
-                "Force immeadiate snapshot to remote targets"
+                "Force immediate snapshot to remote targets"
             ],
             "type": "bool",
             "default": false
@@ -2418,7 +2418,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "with_default_protection": {
             "description": [
-                "Whether to add the default container protection groups to those specified in I(add_to_pgs) as the inital protection of a volume created from a snapshot."
+                "Whether to add the default container protection groups to those specified in I(add_to_pgs) as the initial protection of a volume created from a snapshot."
             ],
             "type": "bool",
             "default": true,
@@ -2485,8 +2485,8 @@ export const options_1_41_0: ModuleOptions = {
         },
         "failover": {
             "description": [
-                "The name of the array given priority to stay online if arrays loose contact with eachother.",
-                "Oprions are either array in the cluster, or I(auto)"
+                "The name of the array given priority to stay online if arrays loose contact with each other.",
+                "Options are either array in the cluster, or I(auto)"
             ],
             "type": "list",
             "elements": "str"
@@ -2608,7 +2608,7 @@ export const options_1_41_0: ModuleOptions = {
                 "Only applicable for existing pods",
                 "Name must include the pod name",
                 "Will create the PG in the pod if it doesn't already exist",
-                "To remove an existing defaul protection group provide I([])"
+                "To remove an existing default protection group provide I([])"
             ],
             "type": "str",
             "version_added": "1.37.0"
@@ -3556,7 +3556,7 @@ export const options_1_41_0: ModuleOptions = {
         "auth_passphrase": {
             "type": "str",
             "description": [
-                "SNMP v3 only. Passphrade used by Purity//FA to authenticate the array wit hthe specified managers.",
+                "SNMP v3 only. Passphrade used by Purity//FA to authenticate the array with the specified managers.",
                 "Must be between 8 and 63 non-space ASCII characters."
             ]
         },
@@ -3592,7 +3592,7 @@ export const options_1_41_0: ModuleOptions = {
     "purestorage.flasharray.purefa_sso": {
         "state": {
             "description": [
-                "Enable or disable the array Signle Sign-On from Pure1 Manage"
+                "Enable or disable the array Single Sign-On from Pure1 Manage"
             ],
             "default": "present",
             "type": "str",
@@ -3730,17 +3730,17 @@ export const options_1_41_0: ModuleOptions = {
         "ca_certificate": {
             "type": "str",
             "description": [
-                "The text of the CA certificate for condifured syslog servers.",
+                "The text of the CA certificate for configured syslog servers.",
                 "Includes the \"-----BEGIN CERTIFICATE-----\" and \"-----END CERTIFICATE-----\" lines",
                 "Does not exceed 3000 characters in length",
-                "To delete the existing CA certifcate use the special string `DELETE`"
+                "To delete the existing CA certificate use the special string `DELETE`"
             ]
         },
         "tls_audit": {
             "type": "bool",
             "default": true,
             "description": [
-                "If messages that are necessary in order to audit TLS negotiations performed by the array are forwared to the syslog servers."
+                "If messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the syslog servers."
             ]
         },
         "context": {
@@ -4030,7 +4030,7 @@ export const options_1_41_0: ModuleOptions = {
     "purestorage.flasharray.purefa_vlan": {
         "name": {
             "description": [
-                "Interface name, including controller indentifier.",
+                "Interface name, including controller identifier.",
                 "VLANs are only supported on iSCSI, NVMe-RoCE and file physical interfaces"
             ],
             "required": true,
@@ -4129,7 +4129,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "overwrite": {
             "description": [
-                "Define whether to overwrite a target volume if it already exisits."
+                "Define whether to overwrite a target volume if it already exists."
             ],
             "type": "bool",
             "default": false
@@ -4208,9 +4208,9 @@ export const options_1_41_0: ModuleOptions = {
         },
         "pgroup": {
             "description": [
-                "Name of exisitng, not deleted, protection group to add volume to",
+                "Name of existing, not deleted, protection group to add volume to",
                 "Only application for volume(s) creation",
-                "Superceeded from Purity//FA 6.3.4 by I(add_to_pgs)"
+                "Superseded from Purity//FA 6.3.4 by I(add_to_pgs)"
             ],
             "type": "str",
             "version_added": "1.8.0"
@@ -4241,7 +4241,7 @@ export const options_1_41_0: ModuleOptions = {
         },
         "with_default_protection": {
             "description": [
-                "Whether to add the default container protection groups to those specified in I(add_to_pgs) as the inital protection of a new volume."
+                "Whether to add the default container protection groups to those specified in I(add_to_pgs) as the initial protection of a new volume."
             ],
             "type": "bool",
             "default": true,
@@ -4301,7 +4301,7 @@ export const options_1_41_0: ModuleOptions = {
         "kvp": {
             "description": [
                 "List of key value pairs to assign to the volume.",
-                "Seperate the key from the value using a colon (:) only.",
+                "Separate the key from the value using a colon (:) only.",
                 "All items in list will use I(namespace) and I(copyable) settings.",
                 "See examples for exact formatting requirements"
             ],
