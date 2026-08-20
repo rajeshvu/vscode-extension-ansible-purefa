@@ -1,6 +1,6 @@
 import { SnippetItem } from "./snippets";
 
-export const snippets_1_42_0: SnippetItem[] = [
+export const snippets_1_43_0: SnippetItem[] = [
     {
         "label": "Create new AD account",
         "description": "- purestorage.flasharray.purefa_ad",
@@ -34,7 +34,7 @@ export const snippets_1_42_0: SnippetItem[] = [
     {
         "label": "Create API token ansible-token",
         "description": "- purestorage.flasharray.purefa_apiclient",
-        "body": "- name: Create API token ansible-token\n  purestorage.flasharray.purefa_apiclient:\n    name: ansible-token\n    issuer: Pure Storage\n    token_ttl: 3000\n    role: array_admin\n    public_key: '{{lookup(''file'', ''public_pem_file'') }}'\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Create API token ansible-token\n  purestorage.flasharray.purefa_apiclient:\n    name: ansible-token\n    issuer: Everpure\n    token_ttl: 3000\n    role: array_admin\n    public_key: '{{lookup(''file'', ''public_pem_file'') }}'\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Disable API CLient",
@@ -707,6 +707,16 @@ export const snippets_1_42_0: SnippetItem[] = [
         "body": "- name: Delete protection group replication schedule\n  purestorage.flasharray.purefa_pgsched:\n    name: foo\n    schedule: replication\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
+        "label": "Clear snap_at value while keeping daily frequency",
+        "description": "- purestorage.flasharray.purefa_pgsched",
+        "body": "- name: Clear snap_at value while keeping daily frequency\n  purestorage.flasharray.purefa_pgsched:\n    name: foo\n    schedule: snapshot\n    snap_at: ''\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Clear replicate_at value while keeping daily frequency",
+        "description": "- purestorage.flasharray.purefa_pgsched",
+        "body": "- name: Clear replicate_at value while keeping daily frequency\n  purestorage.flasharray.purefa_pgsched:\n    name: foo\n    schedule: replication\n    replicate_at: ''\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
         "label": "Create protection group snapshot foo.ansible",
         "description": "- purestorage.flasharray.purefa_pgsnap",
         "body": "- name: Create protection group snapshot foo.ansible\n  purestorage.flasharray.purefa_pgsnap:\n    name: foo\n    suffix: ansible\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: present\n"
@@ -745,6 +755,16 @@ export const snippets_1_42_0: SnippetItem[] = [
         "label": "Rename protection group snapshot foo.fred to foo.dave",
         "description": "- purestorage.flasharray.purefa_pgsnap",
         "body": "- name: Rename protection group snapshot foo.fred to foo.dave\n  purestorage.flasharray.purefa_pgsnap:\n    name: foo\n    suffix: fred\n    target: dave\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: rename\n"
+    },
+    {
+        "label": "Restore all volumes from protection group snapshot foo.snap (overwrite existing)",
+        "description": "- purestorage.flasharray.purefa_pgsnap",
+        "body": "- name: Restore all volumes from protection group snapshot foo.snap (overwrite existing)\n  purestorage.flasharray.purefa_pgsnap:\n    name: foo\n    suffix: snap\n    restore: all\n    overwrite: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: copy\n"
+    },
+    {
+        "label": "Clone all volumes from protection group snapshot foo.snap to new protection group foo_clone",
+        "description": "- purestorage.flasharray.purefa_pgsnap",
+        "body": "- name: Clone all volumes from protection group snapshot foo.snap to new protection\n    group foo_clone\n  purestorage.flasharray.purefa_pgsnap:\n    name: foo\n    suffix: snap\n    restore: all\n    target: foo_clone\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n    state: copy\n"
     },
     {
         "label": "Enable Phonehome",
@@ -892,9 +912,19 @@ export const snippets_1_42_0: SnippetItem[] = [
         "body": "- name: Remove quota rule from quota policy foo\n  purestorage.flasharray.purefa_policy:\n    name: foo\n    policy: quota\n    quota_limit: 10G\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
-        "label": "Update password police management",
+        "label": "Update password policy management",
         "description": "- purestorage.flasharray.purefa_policy",
-        "body": "- name: Update password police management\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_login_attempts: 5\n    enforce_username_check: true\n    enforce_dictionary_check: true\n    min_password_length: 5\n    password_history: 2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+        "body": "- name: Update password policy management\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_login_attempts: 5\n    enforce_username_check: true\n    enforce_dictionary_check: true\n    min_password_length: 5\n    password_history: 2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Update password policy with password age requirements",
+        "description": "- purestorage.flasharray.purefa_policy",
+        "body": "- name: Update password policy with password age requirements\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    min_password_age: 1d\n    max_password_age: 90d\n    lockout_duration: 300\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Disable password expiration",
+        "description": "- purestorage.flasharray.purefa_policy",
+        "body": "- name: Disable password expiration\n  purestorage.flasharray.purefa_policy:\n    name: management\n    policy: password\n    max_password_age: 0\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Delete existing proxy settings",
@@ -1102,6 +1132,36 @@ export const snippets_1_42_0: SnippetItem[] = [
         "body": "- name: Delete existing CA certificate for syslog servers settings\n  purestorage.flasharray.purefa_syslog_settings:\n    ca_certificate: DELETE\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
+        "label": "Create a topology group",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Create a topology group\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
+        "label": "Create a child topology group under an existing parent",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Create a child topology group under an existing parent\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack-dev\n    parent: app-stack\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
+        "label": "Rename a topology group",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Rename a topology group\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack-dev\n    rename: app-stack-qa\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
+        "label": "Add array and child topology group members",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Add array and child topology group members\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack\n    array:\n    - array-a\n    - array-b\n    tgroup:\n    - app-stack-qa\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
+        "label": "Remove specific members from a topology group",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Remove specific members from a topology group\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack\n    array:\n    - array-b\n    tgroup:\n    - app-stack-qa\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
+        "label": "Delete a topology group",
+        "description": "- purestorage.flasharray.purefa_tgroup",
+        "body": "- name: Delete a topology group\n  purestorage.flasharray.purefa_tgroup:\n    name: app-stack-dev\n    state: absent\n    fa_url: 10.10.10.2\n    api_token: 1234-5678-9012-3456\n"
+    },
+    {
         "label": "Set GUI idle timeout to 25 minutes",
         "description": "- purestorage.flasharray.purefa_timeout",
         "body": "- name: Set GUI idle timeout to 25 minutes\n  purestorage.flasharray.purefa_timeout:\n    timeout: 25\n    state: present\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
@@ -1295,6 +1355,11 @@ export const snippets_1_42_0: SnippetItem[] = [
         "label": "Create a workload using an existing preset using the recommended target and connect to host myhost",
         "description": "- purestorage.flasharray.purefa_workload",
         "body": "- name: Create a workload using an existing preset using the recommended target and\n    connect to host myhost\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    host: myhost\n    recommendation: true\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
+    },
+    {
+        "label": "Create a workload using preset parameters",
+        "description": "- purestorage.flasharray.purefa_workload",
+        "body": "- name: Create a workload using preset parameters\n  purestorage.flasharray.purefa_workload:\n    name: foo\n    preset: bar\n    context: arr1\n    parameters:\n    - name: replication_target\n      value:\n        resource_reference:\n          name: arr2\n    fa_url: 10.10.10.2\n    api_token: e31060a7-21fc-e277-6240-25983c6c4592\n"
     },
     {
         "label": "Add volumes to workload foo based on volume configuration fin and connect to host myhost",

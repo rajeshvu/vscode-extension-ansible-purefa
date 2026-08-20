@@ -1,6 +1,6 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_42_0: ModuleOptions = {
+export const options_1_43_0: ModuleOptions = {
     "purestorage.flasharray.purefa_ad": {
         "name": {
             "description": [
@@ -1649,7 +1649,7 @@ export const options_1_42_0: ModuleOptions = {
     "purestorage.flasharray.purefa_info": {
         "gather_subset": {
             "description": [
-                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms, fleet, presets and workloads."
+                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms, fleet, presets, workloads and tgroups."
             ],
             "type": "list",
             "elements": "str",
@@ -2231,7 +2231,9 @@ export const options_1_42_0: ModuleOptions = {
         "replicate_at": {
             "description": [
                 "Provide a time in 12-hour AM/PM format, eg. 11AM",
-                "Only valid if I(replicate_frequency) is an exact multiple of 86400, ie 1 day."
+                "Only valid if I(replicate_frequency) is an exact multiple of 86400, ie 1 day.",
+                "Set to an empty string \"\" to clear an existing at value (sends -1 to the API).",
+                "Automatically cleared when I(replicate_frequency) changes to a non-day multiple."
             ],
             "type": "str"
         },
@@ -2260,7 +2262,9 @@ export const options_1_42_0: ModuleOptions = {
         "snap_at": {
             "description": [
                 "Provide a time in 12-hour AM/PM format, eg. 11AM",
-                "Only valid if I(snap_frequency) is an exact multiple of 86400, ie 1 day."
+                "Only valid if I(snap_frequency) is an exact multiple of 86400, ie 1 day.",
+                "Set to an empty string \"\" to clear an existing at value (sends -1 to the API).",
+                "Automatically cleared when I(snap_frequency) changes to a non-day multiple."
             ],
             "type": "str"
         },
@@ -2360,14 +2364,17 @@ export const options_1_42_0: ModuleOptions = {
         },
         "restore": {
             "description": [
-                "Restore a specific volume from a protection group snapshot.",
-                "The protection group name is not required. Only provide the name of the volume to be restored."
+                "Restore a specific volume from a protection group snapshot, or use C(all) to restore all member volumes at once.",
+                "The protection group name is not required. Only provide the name of the volume to be restored, or C(all) to restore all volumes.",
+                "When using C(all), if restoring to an existing protection group the I(overwrite) parameter must be set to C(true).",
+                "When using C(all), the I(target) parameter can specify a new or existing protection group name. If not specified, it defaults to the source protection group name."
             ],
             "type": "str"
         },
         "overwrite": {
             "description": [
-                "Define whether to overwrite the target volume if it already exists."
+                "Define whether to overwrite the target volume if it already exists.",
+                "Required when I(restore=all) and restoring to an existing protection group."
             ],
             "type": "bool",
             "default": false
@@ -2376,7 +2383,8 @@ export const options_1_42_0: ModuleOptions = {
             "description": [
                 "Volume to restore a specified volume to.",
                 "If not supplied this will default to the volume defined in I(restore)",
-                "Name of new snapshot suffix if renaming a snapshot"
+                "Name of new snapshot suffix if renaming a snapshot",
+                "When I(restore=all), this specifies the target protection group name. If not supplied, defaults to the source protection group name."
             ],
             "type": "str"
         },
@@ -2982,6 +2990,28 @@ export const options_1_42_0: ModuleOptions = {
                 "Maximum is limited by the minimum password length divided by the number of character groups"
             ],
             "type": "int",
+            "version_added": "1.33.0"
+        },
+        "min_password_age": {
+            "description": [
+                "Minimum password age before a password can be changed.",
+                "Value can be specified as a human-readable time period (e.g., C(1d), C(2h), C(30m), C(60s)) or as an integer representing seconds.",
+                "Supported time units are C(w) (weeks), C(d) (days), C(h) (hours), C(m) (minutes), C(s) (seconds).",
+                "Range between 0 seconds (no minimum) and 7 days.",
+                "A value of 0 or C(0s) means passwords can be changed immediately."
+            ],
+            "type": "str",
+            "version_added": "1.33.0"
+        },
+        "max_password_age": {
+            "description": [
+                "Maximum password age before a password must be changed.",
+                "Value can be specified as a human-readable time period (e.g., C(90d), C(1w), C(24h)) or as an integer representing seconds.",
+                "Supported time units are C(w) (weeks), C(d) (days), C(h) (hours), C(m) (minutes), C(s) (seconds).",
+                "Range between 1 day and 99999 days.",
+                "A value of 0 or C(0s) disables password expiration."
+            ],
+            "type": "str",
             "version_added": "1.33.0"
         },
         "rule_name": {
@@ -3753,6 +3783,60 @@ export const options_1_42_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
+    "purestorage.flasharray.purefa_tgroup": {
+        "name": {
+            "description": [
+                "The name of the topology group."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the topology group should exist or not."
+            ],
+            "type": "str",
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ]
+        },
+        "rename": {
+            "description": [
+                "New name of the topology group."
+            ],
+            "type": "str"
+        },
+        "parent": {
+            "description": [
+                "Parent topology group name."
+            ],
+            "type": "str"
+        },
+        "array": {
+            "description": [
+                "List of existing arrays to add to or remove from the topology group."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "tgroup": {
+            "description": [
+                "List of existing child topology groups to add to or remove from the topology group."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
     "purestorage.flasharray.purefa_timeout": {
         "state": {
             "description": [
@@ -4406,6 +4490,77 @@ export const options_1_42_0: ModuleOptions = {
             ],
             "default": false,
             "type": "bool"
+        },
+        "parameters": {
+            "description": [
+                "Parameter values to apply when creating a workload from the preset.",
+                "Parameters are only applied on the create path and are not applied when recovering an existing destroyed workload."
+            ],
+            "type": "list",
+            "elements": "dict",
+            "suboptions": {
+                "name": {
+                    "description": [
+                        "Name of the preset parameter to set."
+                    ],
+                    "type": "str",
+                    "required": true
+                },
+                "value": {
+                    "description": [
+                        "Value for the preset parameter.",
+                        "Exactly one of C(string), C(integer), C(boolean), or C(resource_reference) must be provided."
+                    ],
+                    "type": "dict",
+                    "required": true,
+                    "suboptions": {
+                        "string": {
+                            "description": [
+                                "String parameter value."
+                            ],
+                            "type": "str"
+                        },
+                        "integer": {
+                            "description": [
+                                "Integer parameter value."
+                            ],
+                            "type": "int"
+                        },
+                        "boolean": {
+                            "description": [
+                                "Boolean parameter value."
+                            ],
+                            "type": "bool"
+                        },
+                        "resource_reference": {
+                            "description": [
+                                "Reference to another resource."
+                            ],
+                            "type": "dict",
+                            "suboptions": {
+                                "id": {
+                                    "description": [
+                                        "ID of the referenced resource."
+                                    ],
+                                    "type": "str"
+                                },
+                                "name": {
+                                    "description": [
+                                        "Name of the referenced resource."
+                                    ],
+                                    "type": "str"
+                                },
+                                "resource_type": {
+                                    "description": [
+                                        "Optional resource type for the reference."
+                                    ],
+                                    "type": "str"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "volume_count": {
             "description": [
