@@ -1,7 +1,7 @@
 import { ModuleOptions } from "./options";
 
-export const options_1_43_0: ModuleOptions = {
-    "purestorage.flasharray.purefa_ad": {
+export const options_1_45_0: ModuleOptions = {
+    "everpure.flasharray.purefa_ad": {
         "name": {
             "description": [
                 "Name of the AD account"
@@ -103,7 +103,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.14.0"
         }
     },
-    "purestorage.flasharray.purefa_admin": {
+    "everpure.flasharray.purefa_admin": {
         "sso": {
             "description": [
                 "Enable or disable the array Single Sign-On from Pure1 Manage"
@@ -132,7 +132,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "int"
         }
     },
-    "purestorage.flasharray.purefa_alert": {
+    "everpure.flasharray.purefa_alert": {
         "state": {
             "type": "str",
             "description": [
@@ -160,7 +160,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_apiclient": {
+    "everpure.flasharray.purefa_apiclient": {
         "name": {
             "description": [
                 "Name of the API Client"
@@ -221,7 +221,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": true
         }
     },
-    "purestorage.flasharray.purefa_arrayname": {
+    "everpure.flasharray.purefa_arrayname": {
         "state": {
             "description": [
                 "Set the array name"
@@ -249,7 +249,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_audits": {
+    "everpure.flasharray.purefa_audits": {
         "start": {
             "description": [
                 "Start date and time (based on array local time)",
@@ -275,7 +275,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_banner": {
+    "everpure.flasharray.purefa_banner": {
         "state": {
             "description": [
                 "Set or delete the MOTD"
@@ -304,7 +304,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_cbsexpand": {
+    "everpure.flasharray.purefa_cbsexpand": {
         "state": {
             "description": [
                 "Action to be performed on the CBS array.",
@@ -324,7 +324,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "int"
         }
     },
-    "purestorage.flasharray.purefa_certs": {
+    "everpure.flasharray.purefa_certs": {
         "name": {
             "description": [
                 "Name of the SSL Certificate"
@@ -461,7 +461,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_connect": {
+    "everpure.flasharray.purefa_connect": {
         "state": {
             "description": [
                 "Create or delete array connection"
@@ -544,7 +544,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.40.0"
         }
     },
-    "purestorage.flasharray.purefa_console": {
+    "everpure.flasharray.purefa_console": {
         "state": {
             "description": [
                 "Define state of console lockout",
@@ -567,7 +567,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_default_protection": {
+    "everpure.flasharray.purefa_default_protection": {
         "scope": {
             "description": [
                 "The scope of the default protection group"
@@ -616,7 +616,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.37.0"
         }
     },
-    "purestorage.flasharray.purefa_directory": {
+    "everpure.flasharray.purefa_directory": {
         "name": {
             "description": [
                 "Name of the directory"
@@ -651,7 +651,8 @@ export const options_1_43_0: ModuleOptions = {
         },
         "rename": {
             "description": [
-                "Value to rename the specified directory to"
+                "Value to rename the specified directory to",
+                "Re-running a rename task reports no change, as long as the directory is already known by the new name."
             ],
             "type": "str"
         },
@@ -665,7 +666,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_dirsnap": {
+    "everpure.flasharray.purefa_dirsnap": {
         "name": {
             "description": [
                 "Name of the directory to snapshot"
@@ -754,7 +755,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_dns": {
+    "everpure.flasharray.purefa_dns": {
         "name": {
             "description": [
                 "Name of the DNS configuration.",
@@ -817,7 +818,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.40.0"
         }
     },
-    "purestorage.flasharray.purefa_ds": {
+    "everpure.flasharray.purefa_ds": {
         "state": {
             "type": "str",
             "description": [
@@ -923,7 +924,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_dsrole": {
+    "everpure.flasharray.purefa_dsrole": {
         "name": {
             "description": [
                 "Name of role",
@@ -945,7 +946,9 @@ export const options_1_43_0: ModuleOptions = {
         },
         "role": {
             "description": [
-                "The directory service role to work on"
+                "The built-in directory service role to work on.",
+                "Mutually exclusive with I(access_policy).",
+                "Either I(role) or I(access_policy) is required when I(state=present)."
             ],
             "type": "str",
             "choices": [
@@ -954,6 +957,16 @@ export const options_1_43_0: ModuleOptions = {
                 "readonly",
                 "storage_admin"
             ]
+        },
+        "access_policy": {
+            "description": [
+                "Name of a custom management access policy to bind the directory service role to, instead of a built-in I(role).",
+                "Mutually exclusive with I(role).",
+                "Either I(role) or I(access_policy) is required when I(state=present).",
+                "Requires Purity//FA 6.6.9, or higher (REST 2.36)."
+            ],
+            "type": "str",
+            "version_added": "1.44.0"
         },
         "group_base": {
             "type": "str",
@@ -979,7 +992,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_dsrole_old": {
+    "everpure.flasharray.purefa_dsrole_old": {
         "state": {
             "description": [
                 "Create or delete directory service role"
@@ -1019,7 +1032,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_endpoint": {
+    "everpure.flasharray.purefa_endpoint": {
         "name": {
             "description": [
                 "The name of the endpoint."
@@ -1087,7 +1100,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_eradication": {
+    "everpure.flasharray.purefa_eradication": {
         "timer": {
             "description": [
                 "Set the eradication timer for the FlashArray",
@@ -1124,7 +1137,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_eula": {
+    "everpure.flasharray.purefa_eula": {
         "company": {
             "description": [
                 "Full legal name of the entity.",
@@ -1147,7 +1160,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "str"
         }
     },
-    "purestorage.flasharray.purefa_export": {
+    "everpure.flasharray.purefa_export": {
         "name": {
             "description": [
                 "Name of the export"
@@ -1193,6 +1206,15 @@ export const options_1_43_0: ModuleOptions = {
             ],
             "type": "str"
         },
+        "server": {
+            "description": [
+                "Name of the file server the export belongs to, as managed by M(everpure.flasharray.purefa_server).",
+                "An export name is unique per file server, so this also identifies which export is being managed when the same name is used on more than one.",
+                "Requires Purity//FA REST API 2.44 or higher."
+            ],
+            "type": "str",
+            "version_added": "1.45.0"
+        },
         "context": {
             "description": [
                 "Name of fleet member on which to perform the operation.",
@@ -1203,7 +1225,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_file": {
+    "everpure.flasharray.purefa_file": {
         "source_file": {
             "description": [
                 "Name of the file to copy",
@@ -1242,7 +1264,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": false
         }
     },
-    "purestorage.flasharray.purefa_fleet": {
+    "everpure.flasharray.purefa_fleet": {
         "name": {
             "description": [
                 "Name of the fleet.",
@@ -1283,7 +1305,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "str"
         }
     },
-    "purestorage.flasharray.purefa_fs": {
+    "everpure.flasharray.purefa_fs": {
         "name": {
             "description": [
                 "Name of the file system"
@@ -1313,7 +1335,8 @@ export const options_1_43_0: ModuleOptions = {
             "description": [
                 "Value to rename the specified file system to",
                 "Rename only applies to the container the current filesystem is in.",
-                "There is no requirement to specify the pod name as this is implied."
+                "There is no requirement to specify the pod name as this is implied.",
+                "Re-running a rename task reports no change, as long as the file system is already known by the new name."
             ],
             "type": "str"
         },
@@ -1338,7 +1361,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_hardware": {
+    "everpure.flasharray.purefa_hardware": {
         "name": {
             "description": [
                 "Name of hardware component"
@@ -1353,7 +1376,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "bool"
         }
     },
-    "purestorage.flasharray.purefa_hg": {
+    "everpure.flasharray.purefa_hg": {
         "name": {
             "description": [
                 "The name of the hostgroup."
@@ -1425,7 +1448,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_host": {
+    "everpure.flasharray.purefa_host": {
         "name": {
             "description": [
                 "The name of the host.",
@@ -1475,21 +1498,24 @@ export const options_1_43_0: ModuleOptions = {
             "type": "list",
             "elements": "str",
             "description": [
-                "List of wwns of the host."
+                "List of wwns of the host.",
+                "This is the complete desired set of WWNs. The host is reconciled to match it, adding any that are missing and removing any that are not listed, so a single WWN can be removed by simply omitting it from the list."
             ]
         },
         "iqn": {
             "type": "list",
             "elements": "str",
             "description": [
-                "List of IQNs of the host."
+                "List of IQNs of the host.",
+                "This is the complete desired set of IQNs; the host is reconciled to match it, adding and removing IQNs as needed."
             ]
         },
         "nqn": {
             "type": "list",
             "elements": "str",
             "description": [
-                "List of NQNs of the host. Note that NMVe hosts can only possess NQNs. Multi-protocol is not allowed for these hosts."
+                "List of NQNs of the host. Note that NMVe hosts can only possess NQNs.",
+                "This is the complete desired set of NQNs; the host is reconciled to match it, adding and removing NQNs as needed. Multi-protocol is not allowed for these hosts."
             ]
         },
         "volume": {
@@ -1542,7 +1568,8 @@ export const options_1_43_0: ModuleOptions = {
         "personality": {
             "type": "str",
             "description": [
-                "Define which operating system the host is. Recommended for ActiveCluster integration."
+                "Define which operating system the host is. Recommended for ActiveCluster integration.",
+                "The C(nutanix-mgmt) and C(nutanix-cluster) personalities are only supported from REST API 2.50 and higher."
             ],
             "default": "",
             "choices": [
@@ -1553,6 +1580,8 @@ export const options_1_43_0: ModuleOptions = {
                 "solaris",
                 "hitachi-vsp",
                 "oracle-vm-server",
+                "nutanix-mgmt",
+                "nutanix-cluster",
                 "delete",
                 ""
             ]
@@ -1646,10 +1675,10 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.35.0"
         }
     },
-    "purestorage.flasharray.purefa_info": {
+    "everpure.flasharray.purefa_info": {
         "gather_subset": {
             "description": [
-                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms, fleet, presets, workloads and tgroups."
+                "When supplied, this argument will define the information to be collected. Possible values for this include all, minimum, config, performance, capacity, network, subnet, interfaces, hgroups, pgroups, hosts, admins, volumes, snapshots, pods, replication, vgroups, offload, apps, arrays, certs, kmip, clients, policies, dir_snaps, filesystems, alerts, virtual_machines, subscriptions, realms, fleet, presets, workloads, tgroups, software and support."
             ],
             "type": "list",
             "elements": "str",
@@ -1657,7 +1686,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": "minimum"
         }
     },
-    "purestorage.flasharray.purefa_kmip": {
+    "everpure.flasharray.purefa_kmip": {
         "name": {
             "description": [
                 "Name of the KMIP server object"
@@ -1668,7 +1697,7 @@ export const options_1_43_0: ModuleOptions = {
         "certificate": {
             "description": [
                 "Name of existing certificate used to verify FlashArray authenticity to the KMIP server.",
-                "Use the I(purestorage.flasharray.purefa_certs) module to create certificates."
+                "Use the I(everpure.flasharray.purefa_certs) module to create certificates."
             ],
             "type": "str"
         },
@@ -1700,7 +1729,208 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_logging": {
+    "everpure.flasharray.purefa_lds": {
+        "name": {
+            "description": [
+                "Name of the local directory service"
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the local directory service should exist or not.",
+                "Deleting a local directory service also deletes every user and group it holds. See the note on I(state=absent)."
+            ],
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ],
+            "type": "str"
+        },
+        "domain": {
+            "description": [
+                "Domain name the local directory service serves.",
+                "The array defaults this to the name of the local directory service when it is created without one.",
+                "Two local directory services may share a domain."
+            ],
+            "type": "str"
+        },
+        "rename": {
+            "description": [
+                "Value to rename the specified local directory service to",
+                "Re-running a rename task reports no change, as long as the local directory service is already known by the new name."
+            ],
+            "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_localgroup": {
+        "name": {
+            "description": [
+                "Name of the local group"
+            ],
+            "type": "str",
+            "required": true
+        },
+        "local_directory_service": {
+            "description": [
+                "Name of the local directory service the group belongs to.",
+                "Required because group names repeat across local directory services."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the local group should exist or not."
+            ],
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ],
+            "type": "str"
+        },
+        "gid": {
+            "description": [
+                "Group ID to give the group.",
+                "The array assigns one when the group is created without it.",
+                "Group IDs only have to be unique within a local directory service."
+            ],
+            "type": "int"
+        },
+        "email": {
+            "description": [
+                "Email address to associate with the group."
+            ],
+            "type": "str"
+        },
+        "rename": {
+            "description": [
+                "Value to rename the specified local group to",
+                "Re-running a rename task reports no change, as long as the group is already known by the new name."
+            ],
+            "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_localuser": {
+        "name": {
+            "description": [
+                "Name of the local user"
+            ],
+            "type": "str",
+            "required": true
+        },
+        "local_directory_service": {
+            "description": [
+                "Name of the local directory service the user belongs to.",
+                "Required because user names repeat across local directory services."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the local user should exist or not."
+            ],
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ],
+            "type": "str"
+        },
+        "password": {
+            "description": [
+                "Password for the local user.",
+                "Required when creating a user.",
+                "Whether an existing user's password is reset is controlled by I(update_password)."
+            ],
+            "type": "str"
+        },
+        "update_password": {
+            "description": [
+                "C(on_create) only sets the password when the user is created, which keeps a task that carries a password idempotent.",
+                "C(always) resets the password on every run. The array does not allow a password to be read back, so there is nothing to compare against and such a task always reports a change."
+            ],
+            "default": "on_create",
+            "choices": [
+                "always",
+                "on_create"
+            ],
+            "type": "str"
+        },
+        "primary_group": {
+            "description": [
+                "Name of the group to make the user's primary group.",
+                "Required when creating a user, and the group has to exist already.",
+                "A user must belong to a group before it can become their primary group. This module joins the group first when it has to."
+            ],
+            "type": "str"
+        },
+        "groups": {
+            "description": [
+                "The groups the user belongs to besides I(primary_group).",
+                "This is declarative - groups not in the list are left, and the user is removed from any others. Omit it to leave the user's groups alone.",
+                "The primary group is always a membership and is ignored if listed here."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "uid": {
+            "description": [
+                "User ID to give the user.",
+                "The array assigns one when the user is created without it.",
+                "User IDs only have to be unique within a local directory service."
+            ],
+            "type": "int"
+        },
+        "email": {
+            "description": [
+                "Email address to associate with the user."
+            ],
+            "type": "str"
+        },
+        "enabled": {
+            "description": [
+                "Whether the user is allowed to authenticate."
+            ],
+            "type": "bool"
+        },
+        "rename": {
+            "description": [
+                "Value to rename the specified local user to",
+                "Re-running a rename task reports no change, as long as the user is already known by the new name."
+            ],
+            "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_logging": {
         "log_type": {
             "description": [
                 "The type of logs to be viewed"
@@ -1720,7 +1950,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "int"
         }
     },
-    "purestorage.flasharray.purefa_maintenance": {
+    "everpure.flasharray.purefa_maintenance": {
         "state": {
             "description": [
                 "Create or delete maintennance window"
@@ -1742,7 +1972,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_messages": {
+    "everpure.flasharray.purefa_messages": {
         "severity": {
             "description": [
                 "severity of the alerts to show"
@@ -1791,7 +2021,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_network": {
+    "everpure.flasharray.purefa_network": {
         "name": {
             "description": [
                 "Interface name (physical or virtual)."
@@ -1901,7 +2131,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.22.0"
         }
     },
-    "purestorage.flasharray.purefa_ntp": {
+    "everpure.flasharray.purefa_ntp": {
         "state": {
             "description": [
                 "Create, delete or test NTP servers configuration"
@@ -1943,7 +2173,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.37.0"
         }
     },
-    "purestorage.flasharray.purefa_offload": {
+    "everpure.flasharray.purefa_offload": {
         "state": {
             "description": [
                 "Define state of offload"
@@ -2094,7 +2324,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_pg": {
+    "everpure.flasharray.purefa_pg": {
         "name": {
             "description": [
                 "The name of the protection group."
@@ -2191,7 +2421,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_pgsched": {
+    "everpure.flasharray.purefa_pgsched": {
         "name": {
             "description": [
                 "The name of the protection group."
@@ -2327,7 +2557,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_pgsnap": {
+    "everpure.flasharray.purefa_pgsnap": {
         "name": {
             "description": [
                 "The name of the source protection group."
@@ -2450,7 +2680,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_phonehome": {
+    "everpure.flasharray.purefa_phonehome": {
         "state": {
             "description": [
                 "Define state of phonehome"
@@ -2474,13 +2704,23 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.40.0"
         }
     },
-    "purestorage.flasharray.purefa_pod": {
+    "everpure.flasharray.purefa_pod": {
         "name": {
             "description": [
-                "The name of the pod."
+                "The name of the pod.",
+                "To place a pod inside a realm either set the I(realm) parameter, or provide the fully-qualified C(realm::pod) name here (for example C(myrealm::mypod)). If I(realm) is set, do not also use the C(::) form in this parameter."
             ],
             "type": "str",
             "required": true
+        },
+        "realm": {
+            "description": [
+                "Name of the realm the pod belongs to.",
+                "When set, the pod is created (or managed) as C(realm::pod). This is a convenience for the C(realm::pod) naming convention and is mutually exclusive with providing C(::) directly in I(name).",
+                "Requires Purity//FA 6.6.11, or higher (REST 2.36)."
+            ],
+            "type": "str",
+            "version_added": "1.44.0"
         },
         "stretch": {
             "description": [
@@ -2630,7 +2870,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.37.0"
         }
     },
-    "purestorage.flasharray.purefa_pod_replica": {
+    "everpure.flasharray.purefa_pod_replica": {
         "name": {
             "description": [
                 "ActiveDR source pod name"
@@ -2682,7 +2922,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_policy": {
+    "everpure.flasharray.purefa_policy": {
         "name": {
             "description": [
                 "Name of the policy"
@@ -2833,7 +3073,8 @@ export const options_1_43_0: ModuleOptions = {
         },
         "rename": {
             "description": [
-                "New name of policy"
+                "New name of policy",
+                "Re-running a rename task reports no change, as long as the policy is already known by the new name."
             ],
             "type": "str"
         },
@@ -3009,7 +3250,8 @@ export const options_1_43_0: ModuleOptions = {
                 "Value can be specified as a human-readable time period (e.g., C(90d), C(1w), C(24h)) or as an integer representing seconds.",
                 "Supported time units are C(w) (weeks), C(d) (days), C(h) (hours), C(m) (minutes), C(s) (seconds).",
                 "Range between 1 day and 99999 days.",
-                "A value of 0 or C(0s) disables password expiration."
+                "A value of 0 or C(0s) disables password expiration.",
+                "Requires FlashArray REST API 2.39 or later."
             ],
             "type": "str",
             "version_added": "1.33.0"
@@ -3040,7 +3282,92 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.40.0"
         }
     },
-    "purestorage.flasharray.purefa_proxy": {
+    "everpure.flasharray.purefa_policy_management_access": {
+        "name": {
+            "description": [
+                "The name of the management-access policy."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the policy should exist or not."
+            ],
+            "type": "str",
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ]
+        },
+        "enabled": {
+            "description": [
+                "Define whether the policy is enabled and grants its permissions."
+            ],
+            "type": "bool",
+            "default": true
+        },
+        "aggregation_strategy": {
+            "description": [
+                "How the permissions from this policy combine with other policies that apply to the same user.",
+                "C(least-common-permissions) restricts users to no more than the access defined here.",
+                "C(all-permissions) allows users to also receive access from other policies that apply to them."
+            ],
+            "type": "str",
+            "default": "all-permissions",
+            "choices": [
+                "all-permissions",
+                "least-common-permissions"
+            ]
+        },
+        "rename": {
+            "description": [
+                "New name for an existing management-access policy."
+            ],
+            "type": "str"
+        },
+        "rules": {
+            "description": [
+                "List of scoped-role rules that make up the policy.",
+                "Replaces the full set of rules on the policy when provided."
+            ],
+            "type": "list",
+            "elements": "dict",
+            "suboptions": {
+                "role": {
+                    "description": [
+                        "Name of the role granted by this rule, for example C(storage) or C(array_admin)."
+                    ],
+                    "type": "str",
+                    "required": true
+                },
+                "scope": {
+                    "description": [
+                        "Name of the resource the role is scoped to, for example a realm name."
+                    ],
+                    "type": "str",
+                    "required": true
+                },
+                "resource_type": {
+                    "description": [
+                        "Type of the scoped resource."
+                    ],
+                    "type": "str",
+                    "default": "realms"
+                }
+            }
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_proxy": {
         "state": {
             "description": [
                 "Set or delete proxy configuration"
@@ -3077,7 +3404,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "int"
         }
     },
-    "purestorage.flasharray.purefa_ra": {
+    "everpure.flasharray.purefa_ra": {
         "state": {
             "description": [
                 "Define state of remote assist",
@@ -3103,7 +3430,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_realm": {
+    "everpure.flasharray.purefa_realm": {
         "name": {
             "description": [
                 "The name of the realm.",
@@ -3175,7 +3502,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": false
         }
     },
-    "purestorage.flasharray.purefa_saml": {
+    "everpure.flasharray.purefa_saml": {
         "name": {
             "description": [
                 "Name of the SAML2 identity provider (IdP)"
@@ -3253,7 +3580,95 @@ export const options_1_43_0: ModuleOptions = {
             "type": "str"
         }
     },
-    "purestorage.flasharray.purefa_sessions": {
+    "everpure.flasharray.purefa_server": {
+        "name": {
+            "description": [
+                "Name of the file server."
+            ],
+            "type": "str",
+            "required": true
+        },
+        "state": {
+            "description": [
+                "Define whether the file server should exist or not."
+            ],
+            "default": "present",
+            "type": "str",
+            "choices": [
+                "absent",
+                "present"
+            ]
+        },
+        "rename": {
+            "description": [
+                "Value to rename the specified file server to."
+            ],
+            "type": "str"
+        },
+        "dns": {
+            "description": [
+                "Name of the DNS configuration the file server uses.",
+                "This is a DNS configuration with I(service=file), as created by M(everpure.flasharray.purefa_dns).",
+                "A new file server is given the array's management DNS configuration by default, so this is for moving one onto a DNS configuration of its own.",
+                "Set to an empty string to detach the current DNS configuration.",
+                "Not enough on its own to create a file server. See I(directory_service)."
+            ],
+            "type": "str"
+        },
+        "directory_service": {
+            "description": [
+                "Name of the directory service configuration the file server authenticates against, as managed by M(everpure.flasharray.purefa_ds).",
+                "This is a directory service the file server can see. The array's own C(management) directory service is not one of them.",
+                "Set to an empty string to detach the current directory service."
+            ],
+            "type": "str"
+        },
+        "local_directory_service": {
+            "description": [
+                "Name of an existing local directory service to associate with the file server.",
+                "A local directory service belongs to one file server at a time, so this fails if another file server already has it.",
+                "Mutually exclusive with I(create_local_directory_service)."
+            ],
+            "type": "str"
+        },
+        "create_local_directory_service": {
+            "description": [
+                "Name of a local directory service for the array to create and associate with the file server.",
+                "Only applies when the file server is created. Ignored for a file server that already exists.",
+                "Mutually exclusive with I(local_directory_service)."
+            ],
+            "type": "str"
+        },
+        "network_interfaces": {
+            "description": [
+                "Names of the network interfaces the file server is reachable on, such as the file VIFs created by M(everpure.flasharray.purefa_network).",
+                "Declarative. Interfaces in the list that are not attached to this file server are attached, and interfaces attached to it that are not in the list are detached. An empty list detaches all of them.",
+                "Omit the option to leave the file server's interfaces alone. Detaching an interface stops clients reaching the file server through it, so this only ever acts on a task that names the interfaces explicitly.",
+                "An interface can be attached to one file server at a time."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "cascade_delete": {
+            "description": [
+                "Resource types to delete along with the file server, for objects that would otherwise block its deletion.",
+                "C(directory-services) is the only value the array accepts.",
+                "This does not remove a local directory service created for the server, which outlives it and has to be deleted separately.",
+                "Only applies when I(state=absent)."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_sessions": {
         "start": {
             "description": [
                 "Start date and time (based on array local time)",
@@ -3278,7 +3693,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "str"
         }
     },
-    "purestorage.flasharray.purefa_smis": {
+    "everpure.flasharray.purefa_smis": {
         "slp": {
             "description": [
                 "Enable/Disable Service Locator Protocol",
@@ -3296,7 +3711,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": true
         }
     },
-    "purestorage.flasharray.purefa_smtp": {
+    "everpure.flasharray.purefa_smtp": {
         "state": {
             "description": [
                 "Set or delete SMTP configuration"
@@ -3369,7 +3784,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_snap": {
+    "everpure.flasharray.purefa_snap": {
         "name": {
             "description": [
                 "The name of the source volume."
@@ -3454,7 +3869,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_snmp": {
+    "everpure.flasharray.purefa_snmp": {
         "name": {
             "description": [
                 "Name of SNMP Manager"
@@ -3547,7 +3962,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_snmp_agent": {
+    "everpure.flasharray.purefa_snmp_agent": {
         "state": {
             "type": "str",
             "description": [
@@ -3619,7 +4034,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_sso": {
+    "everpure.flasharray.purefa_sso": {
         "state": {
             "description": [
                 "Enable or disable the array Single Sign-On from Pure1 Manage"
@@ -3632,7 +4047,7 @@ export const options_1_43_0: ModuleOptions = {
             ]
         }
     },
-    "purestorage.flasharray.purefa_subnet": {
+    "everpure.flasharray.purefa_subnet": {
         "name": {
             "description": [
                 "Subnet name."
@@ -3689,7 +4104,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "int"
         }
     },
-    "purestorage.flasharray.purefa_syslog": {
+    "everpure.flasharray.purefa_syslog": {
         "state": {
             "description": [
                 "Create, updatee, delete or test syslog servers configuration"
@@ -3744,7 +4159,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.37.0"
         }
     },
-    "purestorage.flasharray.purefa_syslog_settings": {
+    "everpure.flasharray.purefa_syslog_settings": {
         "severity": {
             "description": [
                 "Logging severity threshold for which events will be forwarded to the configured syslog servers."
@@ -3783,7 +4198,91 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_tgroup": {
+    "everpure.flasharray.purefa_tags": {
+        "resource_type": {
+            "description": [
+                "The kind of resource to tag.",
+                "C(array) tags the array itself and takes no I(name).",
+                "Each type became taggable in a different Purity//FA release, so the module checks the REST version for the type requested rather than one version for all of them."
+            ],
+            "type": "str",
+            "required": true,
+            "choices": [
+                "array",
+                "host",
+                "host_group",
+                "pod",
+                "protection_group",
+                "protection_group_snapshot",
+                "realm",
+                "volume",
+                "volume_group",
+                "volume_snapshot",
+                "workload"
+            ]
+        },
+        "name": {
+            "description": [
+                "Name of the resource to tag.",
+                "Required for every I(resource_type) except C(array), which is the array the module is talking to."
+            ],
+            "type": "str"
+        },
+        "namespace": {
+            "description": [
+                "The tag namespace to work in.",
+                "Namespaces are independent - the same key can hold a different value in each, and a tag is only ever read, written or removed in the namespace named here."
+            ],
+            "default": "default",
+            "type": "str"
+        },
+        "kvp": {
+            "description": [
+                "List of key value pairs to set on the resource.",
+                "Separate the key from the value using a colon (:) only.",
+                "Required when I(state=present).",
+                "With I(state=absent) and no I(keys), the keys of these pairs are the tags removed, and their values are ignored."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "keys": {
+            "description": [
+                "List of tag keys to remove, for use with I(state=absent).",
+                "Takes precedence over the keys in I(kvp)."
+            ],
+            "type": "list",
+            "elements": "str"
+        },
+        "copyable": {
+            "description": [
+                "Whether the tag is inherited by copies of the resource.",
+                "Only the volume family honours this. The array accepts it for the other resource types and silently stores C(true) regardless, so it is only compared, and only reported as a change, for C(volume), C(volume_group) and C(volume_snapshot).",
+                "Omit it to let the array use its own default."
+            ],
+            "type": "bool"
+        },
+        "state": {
+            "description": [
+                "Define whether the tags should exist or not."
+            ],
+            "default": "present",
+            "choices": [
+                "absent",
+                "present"
+            ],
+            "type": "str"
+        },
+        "context": {
+            "description": [
+                "Name of fleet member on which to perform the operation.",
+                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+            ],
+            "type": "str",
+            "default": ""
+        }
+    },
+    "everpure.flasharray.purefa_tgroup": {
         "name": {
             "description": [
                 "The name of the topology group."
@@ -3837,7 +4336,7 @@ export const options_1_43_0: ModuleOptions = {
             "default": ""
         }
     },
-    "purestorage.flasharray.purefa_timeout": {
+    "everpure.flasharray.purefa_timeout": {
         "state": {
             "description": [
                 "Set or disable the GUI idle timeout"
@@ -3866,7 +4365,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.39.0"
         }
     },
-    "purestorage.flasharray.purefa_token": {
+    "everpure.flasharray.purefa_token": {
         "state": {
             "description": [
                 "Create or delete API token"
@@ -3919,7 +4418,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.31.0"
         }
     },
-    "purestorage.flasharray.purefa_user": {
+    "everpure.flasharray.purefa_user": {
         "state": {
             "description": [
                 "Create, delete or update local user account"
@@ -3933,7 +4432,7 @@ export const options_1_43_0: ModuleOptions = {
         },
         "name": {
             "description": [
-                "The name of the local user account"
+                "The name of the user account."
             ],
             "type": "str",
             "required": true
@@ -3998,7 +4497,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.37.0"
         }
     },
-    "purestorage.flasharray.purefa_vg": {
+    "everpure.flasharray.purefa_vg": {
         "name": {
             "description": [
                 "The name of the volume group.",
@@ -4111,7 +4610,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_vlan": {
+    "everpure.flasharray.purefa_vlan": {
         "name": {
             "description": [
                 "Interface name, including controller identifier.",
@@ -4155,7 +4654,7 @@ export const options_1_43_0: ModuleOptions = {
             "type": "str"
         }
     },
-    "purestorage.flasharray.purefa_vnc": {
+    "everpure.flasharray.purefa_vnc": {
         "state": {
             "description": [
                 "Define state of VNC"
@@ -4175,7 +4674,7 @@ export const options_1_43_0: ModuleOptions = {
             "required": true
         }
     },
-    "purestorage.flasharray.purefa_volume": {
+    "everpure.flasharray.purefa_volume": {
         "name": {
             "description": [
                 "The name of the volume.",
@@ -4360,7 +4859,7 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.33.0"
         }
     },
-    "purestorage.flasharray.purefa_volume_tags": {
+    "everpure.flasharray.purefa_volume_tags": {
         "name": {
             "description": [
                 "The name of the volume."
@@ -4387,17 +4886,22 @@ export const options_1_43_0: ModuleOptions = {
                 "List of key value pairs to assign to the volume.",
                 "Separate the key from the value using a colon (:) only.",
                 "All items in list will use I(namespace) and I(copyable) settings.",
-                "See examples for exact formatting requirements"
+                "See examples for exact formatting requirements",
+                "With I(state=absent) and no I(tag), the keys of these pairs are the tags removed and their values are ignored."
             ],
             "type": "list",
             "elements": "str"
         },
         "tag": {
             "description": [
-                "List of volume tags to be deleted from a volume"
+                "List of tag keys to remove from the volume, for use with I(state=absent).",
+                "Takes precedence over the keys in I(kvp)."
             ],
             "type": "list",
             "elements": "str",
+            "aliases": [
+                "keys"
+            ],
             "version_added": "1.38.0"
         },
         "state": {
@@ -4421,19 +4925,24 @@ export const options_1_43_0: ModuleOptions = {
             "version_added": "1.38.0"
         }
     },
-    "purestorage.flasharray.purefa_workload": {
+    "everpure.flasharray.purefa_workload": {
         "context": {
             "description": [
-                "Name of fleet member on which to perform the workload operation.",
-                "This requires the array receiving the request is a member of a fleet and the context name to be a member of the same fleet."
+                "Name of the fleet member on which to perform the workload operation, or the name of the fleet itself.",
+                "Defaults to the whole fleet. Selecting the fleet means - \"the workload with this name, wherever it is in the fleet\".",
+                "A create is the one exception, because there is nothing to look up. Either specify this or I(placement), or set I(recommendation), in which case Fusion chooses the target array.",
+                "A workload is identified by its name B(and) its member. The same name on two fleet members is two separate workloads, so naming a different member creates a second one rather than moving the first. If two or more members hold the name in the same context (e.g. Fleet), the task is ambiguous and fails naming them, rather than picking one."
             ],
             "type": "str",
-            "default": ""
+            "version_added": "1.36.0"
         },
         "host": {
             "type": "str",
             "description": [
-                "Host to connect to the workload after provisioning"
+                "Host to connect to every volume in the workload after provisioning.",
+                "With I(state=absent) the host is disconnected from the workload's volumes instead of the workload being deleted.",
+                "Only the workload's own volumes are affected. Volumes the host is connected to outside this workload are never changed.",
+                "Refused together with I(rename), which does not disturb connections and connects nothing. Run the two as separate tasks."
             ],
             "default": ""
         },
@@ -4460,7 +4969,9 @@ export const options_1_43_0: ModuleOptions = {
         },
         "preset": {
             "description": [
-                "name of existing preset to use as the basis of the workload"
+                "Name of an existing workload preset to build the workload from.",
+                "Required to create a workload, and to expand one",
+                "Presets are fleet objects, named C(<fleet>:<preset>) by the API. Give the bare name; the fleet is prefixed automatically."
             ],
             "type": "str"
         },
@@ -4472,21 +4983,26 @@ export const options_1_43_0: ModuleOptions = {
         },
         "eradicate": {
             "description": [
-                "whether to eradicate a workload"
+                "whether to eradicate a workload",
+                "Applies only to I(state=absent). Any other state is refused."
             ],
             "type": "bool",
             "default": false
         },
         "placement": {
             "description": [
-                "name of target on which the workload will be deployed"
+                "Name of the fleet member on which the workload will be deployed.",
+                "Same as I(context), so naming both with different members fails.",
+                "Naming neither this nor I(context) means the whole fleet - see I(context) for what that resolves to, and for the one operation that cannot default.",
+                "Ignored when I(recommendation) is true, as the recommended target replaces it."
             ],
             "type": "str"
         },
         "recommendation": {
             "description": [
-                "whether to use the Fusion placement recommendation based on the workload preset definitions.",
-                "This will use the first recommended placement if more than one is available"
+                "whether to use the Fusion placement recommendation based on the workload preset definitions during creates.",
+                "This will use the first recommended placement if more than one is available",
+                "Only useful during a create. Every other operation works from the member already holding the workload, which is looked up rather than chosen, so setting this there changes nothing."
             ],
             "default": false,
             "type": "bool"
@@ -4494,7 +5010,8 @@ export const options_1_43_0: ModuleOptions = {
         "parameters": {
             "description": [
                 "Parameter values to apply when creating a workload from the preset.",
-                "Parameters are only applied on the create path and are not applied when recovering an existing destroyed workload."
+                "Parameters are only applied on the create path and are not applied when recovering an existing destroyed workload.",
+                "Any task that does not create is told they were not applied, rather than dropping them silently."
             ],
             "type": "list",
             "elements": "dict",
@@ -4564,13 +5081,105 @@ export const options_1_43_0: ModuleOptions = {
         },
         "volume_count": {
             "description": [
-                "Number of additional volumes to add to an existing workload"
+                "Number of additional volumes to add to an existing workload",
+                "Only used with I(state=expand), where it is required.",
+                "Must be a positive integer. Zero is rejected."
             ],
             "type": "int"
         },
         "volume_configuration": {
             "description": [
                 "Name of the volume configuration to use for adding volumes to a workload"
+            ],
+            "type": "str"
+        },
+        "wait": {
+            "description": [
+                "Whether to wait for the array to finish provisioning before returning.",
+                "Cannot be disabled when I(host) is set. A host can only be connected to every volume in a workload once the volume set has settled."
+            ],
+            "type": "bool",
+            "default": true,
+            "version_added": "1.45.0"
+        },
+        "wait_timeout": {
+            "description": [
+                "Maximum number of seconds to wait for a single array operation when I(wait) is true. The task fails if that operation has not finished within this time.",
+                "This bounds each operation individually rather than the task as a whole, so a task that waits for more than one can take a multiple of it."
+            ],
+            "type": "int",
+            "default": 300,
+            "version_added": "1.45.0"
+        }
+    },
+    "everpure.flasharray.purefa_zte": {
+        "state": {
+            "description": [
+                "The ZTE phase to perform.",
+                "I(start) begins Phase 1, securely wiping the drives and generating the sanitization certificate. If a reset is already running this is a no-op.",
+                "I(status) returns the current ZTE process status and, when available, the sanitization certificate. This is non-destructive.",
+                "I(finalize) performs Phase 3, finalizing the reset. This permanently deletes the sanitization certificate, so ensure it has been saved first. A finalized array no longer reports a reset process, so re-running I(finalize) reports no change rather than failing.",
+                "I(cancel) cancels a ZTE process that is in a failed state. If no reset is present, or the reset has not failed, this is a no-op."
+            ],
+            "type": "str",
+            "choices": [
+                "start",
+                "status",
+                "finalize",
+                "cancel"
+            ],
+            "default": "status"
+        },
+        "eradicate": {
+            "description": [
+                "A safety acknowledgement that must be set to C(true) to perform any destructive ZTE phase (I(start) or I(finalize)).",
+                "Setting this to C(true) confirms that you understand all data on the array will be permanently and unrecoverably erased."
+            ],
+            "type": "bool",
+            "default": false
+        },
+        "preserve_config": {
+            "description": [
+                "Whether to preserve array configuration data during the drive wipe.",
+                "Note that the default preserves all configuration data. Set this to C(false) to wipe configuration data as well, for a completely factory-fresh array.",
+                "Only used when I(state=start)."
+            ],
+            "type": "bool",
+            "default": true
+        },
+        "skip_phonehome_check": {
+            "description": [
+                "Skip the phonehome connectivity check when starting ZTE.",
+                "Must be set to C(true) for darksite arrays that do not have connectivity to Everpure cloud servers, otherwise the reset will fail the phonehome connectivity check.",
+                "Only used when I(state=start)."
+            ],
+            "type": "bool",
+            "default": false
+        },
+        "reinstall_image": {
+            "description": [
+                "Whether to reinstall the array image when finalizing ZTE.",
+                "When C(false) (Option 1), existing system-generated data, management interface configuration and configuration data are retained.",
+                "When C(true) (Option 2), the array image is reinstalled and existing system-generated data, management interface configuration and configuration data are removed.",
+                "Only used when I(state=finalize)."
+            ],
+            "type": "bool",
+            "default": false
+        },
+        "image_source": {
+            "description": [
+                "The source of the image used when I(reinstall_image=true).",
+                "For phoning-home arrays set this to C(auto).",
+                "For darksite arrays set this to the URL, or file path, of an image bundle that the array can access. The image bundle must be the same version as the Purity//FA version running on the array.",
+                "Only used when I(state=finalize) and I(reinstall_image=true)."
+            ],
+            "type": "str",
+            "default": "auto"
+        },
+        "image_version": {
+            "description": [
+                "The Purity//FA version of the darksite image bundle referenced by I(image_source).",
+                "Only used when I(state=finalize) and I(reinstall_image=true) for a darksite array."
             ],
             "type": "str"
         }
