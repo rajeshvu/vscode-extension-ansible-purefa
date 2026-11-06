@@ -209,7 +209,7 @@ function getWordAt(document: vscode.TextDocument, position: vscode.Position) {
 function findModuleName(document: vscode.TextDocument, position: vscode.Position) {
     for (let i = position.line; i >= 0; i--) {
         const match = document.lineAt(i).text.match(/^\s*([a-zA-Z0-9_.-]+)\s*:/);
-        if (match && match[1].startsWith('purestorage.flasharray.')) {
+        if (match && match[1].startsWith('everpure.flasharray.')) {
             return match[1];
         }
     }
